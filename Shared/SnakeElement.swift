@@ -9,10 +9,12 @@
 import Foundation
 import SpriteKit
 
-class SnakeElement{
-    private let position: CGPoint
+class SnakeElement: Cell{
+    internal let position: CGPoint
+    internal let type = CellType.snakeElement
+    internal let spriteNode: SKSpriteNode
+    
     private var elementTexture: SKTexture
-    private let elementSpriteNode: SKSpriteNode
     private var previousSnakeElement : SnakeElement?
     private var nextSnakeElement : SnakeElement?
     
@@ -21,6 +23,5 @@ class SnakeElement{
         elementTexture = SKTexture(image: #imageLiteral(resourceName: "SnakeElementSprite"))
         elementSpriteNode = SKSpriteNode(texture: elementTexture, size: withSize)
         previousSnakeElement = after
-        
     }
 }
