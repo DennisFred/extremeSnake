@@ -26,7 +26,6 @@
 		9578FEF21EEC4527009817FF /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9578FEA61EEC4526009817FF /* Actions.sks */; };
 		9578FEF31EEC4527009817FF /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9578FEA61EEC4526009817FF /* Actions.sks */; };
 		9578FEF41EEC4527009817FF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9578FEA71EEC4526009817FF /* GameScene.sks */; };
-		9578FEF51EEC4527009817FF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9578FEA71EEC4526009817FF /* GameScene.sks */; };
 		9578FEF61EEC4527009817FF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9578FEA71EEC4526009817FF /* GameScene.sks */; };
 		9578FEF71EEC4527009817FF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9578FEA71EEC4526009817FF /* GameScene.sks */; };
 		9578FEF81EEC4527009817FF /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FEA81EEC4526009817FF /* GameScene.swift */; };
@@ -37,6 +36,7 @@
 		9578FEFD1EEC4527009817FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9578FEA91EEC4526009817FF /* Assets.xcassets */; };
 		9578FEFE1EEC4527009817FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9578FEA91EEC4526009817FF /* Assets.xcassets */; };
 		9578FEFF1EEC4527009817FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9578FEA91EEC4526009817FF /* Assets.xcassets */; };
+		9578FF141EEC4611009817FF /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9578FEA71EEC4526009817FF /* GameScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -407,7 +407,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9578FEF51EEC4527009817FF /* GameScene.sks in Resources */,
+				9578FF141EEC4611009817FF /* GameScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,7 +694,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8UV3T524J8;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.Dennis.extremeSnake;
 				PRODUCT_NAME = extremeSnake;
@@ -711,7 +711,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8UV3T524J8;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.Dennis.extremeSnake;
 				PRODUCT_NAME = extremeSnake;
