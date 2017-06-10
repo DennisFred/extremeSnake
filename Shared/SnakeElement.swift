@@ -21,5 +21,6 @@ class SnakeElement{
         elementTexture = SKTexture(image: #imageLiteral(resourceName: "SnakeElementSprite"))
         elementSpriteNode = SKSpriteNode(texture: elementTexture, size: withSize)
         previousSnakeElement = after
+        
     }
 }
