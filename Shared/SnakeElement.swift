@@ -21,7 +21,7 @@ class SnakeElement: Cell{
     init(atPoint: CGPoint, withSize: CGSize, after:SnakeElement?) {
         position = atPoint
         elementTexture = SKTexture(image: #imageLiteral(resourceName: "SnakeElementSprite"))
-        elementSpriteNode = SKSpriteNode(texture: elementTexture, size: withSize)
+        spriteNode = SKSpriteNode(texture: elementTexture, size: withSize)
         previousSnakeElement = after
     }
 }
