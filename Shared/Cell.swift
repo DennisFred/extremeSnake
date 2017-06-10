@@ -14,7 +14,5 @@ enum CellType {
 }
 
 protocol Cell {
-    var position: CGPoint { get }
     var type: CellType { get }
-    var spriteNode: SKSpriteNode {get}
 }

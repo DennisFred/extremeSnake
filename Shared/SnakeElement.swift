@@ -9,19 +9,19 @@
 import Foundation
 import SpriteKit
 
-class SnakeElement: Cell{
-    internal let position: CGPoint
+class SnakeElement: SKSpriteNode, Cell{
     internal let type = CellType.snakeElement
-    internal let spriteNode: SKSpriteNode
     
-    private var elementTexture: SKTexture
     private var previousSnakeElement : SnakeElement?
     private var nextSnakeElement : SnakeElement?
     
     init(atPoint: CGPoint, withSize: CGSize, after:SnakeElement?) {
+        super.init(texture: SKTexture(image: #imageLiteral(resourceName: "SnakeElementSprite")), color:.clear, size: withSize)
         position = atPoint
-        elementTexture = SKTexture(image: #imageLiteral(resourceName: "SnakeElementSprite"))
-        spriteNode = SKSpriteNode(texture: elementTexture, size: withSize)
         previousSnakeElement = after
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

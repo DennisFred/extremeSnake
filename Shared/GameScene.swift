@@ -14,10 +14,25 @@ import SpriteKit
 #endif
 
 class GameScene: SKScene {
-    
-    
     fileprivate var label : SKLabelNode?
-
+    private var snake : Snake?
+    private let columns: CGFloat = 11
+    private var cellSize: CGSize?
+    
+    override init(size: CGSize) {
+        super.init(size: size)
+        
+        anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        
+        let cellWidth = self.size.width > self.size.height ? self.size.height / columns : self.size.width / columns
+        cellSize = CGSize(width: cellWidth, height: cellWidth)
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
         guard let scene = SKScene(fileNamed: "GameScene") as? GameScene else {
@@ -31,6 +46,12 @@ class GameScene: SKScene {
         return scene
     }
     
+    func getCellPositionFromGrid(x: Int, y: Int) -> CGPoint{
+        let cellWidth = cellSize!.width
+        return CGPoint(x:  CGFloat(x) * cellWidth, y: CGFloat(y) * cellWidth)
+        
+    }
+    
     func setUpScene() {
         // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "//lengthLabel") as? SKLabelNode
@@ -38,8 +59,8 @@ class GameScene: SKScene {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
-        
-        
+        let middleColumn = Int((columns/2).rounded())
+        snake = Snake(atPoint: getCellPositionFromGrid(x: middleColumn, y: middleColumn))
     }
     
     #if os(watchOS)
