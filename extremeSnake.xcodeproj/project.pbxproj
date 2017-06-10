@@ -41,6 +41,10 @@
 		9578FF181EEC493D009817FF /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF161EEC493D009817FF /* Snake.swift */; };
 		9578FF191EEC493D009817FF /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF161EEC493D009817FF /* Snake.swift */; };
 		9578FF1A1EEC493D009817FF /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF161EEC493D009817FF /* Snake.swift */; };
+		9578FF1C1EEC49A2009817FF /* SnakeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF1B1EEC49A2009817FF /* SnakeElement.swift */; };
+		9578FF1D1EEC49A2009817FF /* SnakeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF1B1EEC49A2009817FF /* SnakeElement.swift */; };
+		9578FF1E1EEC49A2009817FF /* SnakeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF1B1EEC49A2009817FF /* SnakeElement.swift */; };
+		9578FF1F1EEC49A2009817FF /* SnakeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF1B1EEC49A2009817FF /* SnakeElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +118,7 @@
 		9578FEEE1EEC4527009817FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9578FEF01EEC4527009817FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9578FF161EEC493D009817FF /* Snake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
+		9578FF1B1EEC49A2009817FF /* SnakeElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnakeElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				9578FF161EEC493D009817FF /* Snake.swift */,
+				9578FF1B1EEC49A2009817FF /* SnakeElement.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -456,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9578FF171EEC493D009817FF /* Snake.swift in Sources */,
+				9578FF1C1EEC49A2009817FF /* SnakeElement.swift in Sources */,
 				9578FEF81EEC4527009817FF /* GameScene.swift in Sources */,
 				9578FEB41EEC4527009817FF /* GameViewController.swift in Sources */,
 				9578FEB21EEC4527009817FF /* AppDelegate.swift in Sources */,
@@ -467,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9578FF181EEC493D009817FF /* Snake.swift in Sources */,
+				9578FF1D1EEC49A2009817FF /* SnakeElement.swift in Sources */,
 				9578FEF91EEC4527009817FF /* GameScene.swift in Sources */,
 				9578FED31EEC4527009817FF /* ExtensionDelegate.swift in Sources */,
 				9578FED11EEC4527009817FF /* InterfaceController.swift in Sources */,
@@ -478,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9578FF191EEC493D009817FF /* Snake.swift in Sources */,
+				9578FF1E1EEC49A2009817FF /* SnakeElement.swift in Sources */,
 				9578FEFA1EEC4527009817FF /* GameScene.swift in Sources */,
 				9578FEDE1EEC4527009817FF /* GameViewController.swift in Sources */,
 				9578FEDC1EEC4527009817FF /* AppDelegate.swift in Sources */,
@@ -489,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9578FF1A1EEC493D009817FF /* Snake.swift in Sources */,
+				9578FF1F1EEC49A2009817FF /* SnakeElement.swift in Sources */,
 				9578FEFB1EEC4527009817FF /* GameScene.swift in Sources */,
 				9578FEEC1EEC4527009817FF /* GameViewController.swift in Sources */,
 				9578FEEA1EEC4527009817FF /* AppDelegate.swift in Sources */,
