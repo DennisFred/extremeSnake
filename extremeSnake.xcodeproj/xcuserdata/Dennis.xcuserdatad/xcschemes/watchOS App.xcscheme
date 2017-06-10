@@ -5,6 +5,36 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9578FEBD1EEC4527009817FF"
+               BuildableName = "extremeSnake.app"
+               BlueprintName = "watchOS App"
+               ReferencedContainer = "container:extremeSnake.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9578FEAD1EEC4527009817FF"
+               BuildableName = "extremeSnake.app"
+               BlueprintName = "iOS"
+               ReferencedContainer = "container:extremeSnake.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -13,6 +43,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9578FEBD1EEC4527009817FF"
+            BuildableName = "extremeSnake.app"
+            BlueprintName = "watchOS App"
+            ReferencedContainer = "container:extremeSnake.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +65,27 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/extremeSnake">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9578FEBD1EEC4527009817FF"
+            BuildableName = "extremeSnake.app"
+            BlueprintName = "watchOS App"
+            ReferencedContainer = "container:extremeSnake.xcodeproj">
+         </BuildableReference>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9578FEBD1EEC4527009817FF"
+            BuildableName = "extremeSnake.app"
+            BlueprintName = "watchOS App"
+            ReferencedContainer = "container:extremeSnake.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +95,27 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/extremeSnake">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9578FEBD1EEC4527009817FF"
+            BuildableName = "extremeSnake.app"
+            BlueprintName = "watchOS App"
+            ReferencedContainer = "container:extremeSnake.xcodeproj">
+         </BuildableReference>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9578FEBD1EEC4527009817FF"
+            BuildableName = "extremeSnake.app"
+            BlueprintName = "watchOS App"
+            ReferencedContainer = "container:extremeSnake.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
