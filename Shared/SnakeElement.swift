@@ -7,11 +7,19 @@
 //
 
 import Foundation
+import SpriteKit
 
-struct SnakeElement{
+class SnakeElement{
     private let position: CGPoint
+    private var elementTexture: SKTexture
+    private let elementSpriteNode: SKSpriteNode
+    private var previousSnakeElement : SnakeElement?
+    private var nextSnakeElement : SnakeElement?
     
-    init(atPoint: CGPoint) {
+    init(atPoint: CGPoint, withSize: CGSize, after:SnakeElement?) {
         position = atPoint
+        elementTexture = SKTexture(image: #imageLiteral(resourceName: "SnakeElementSprite"))
+        elementSpriteNode = SKSpriteNode(texture: elementTexture, size: withSize)
+        previousSnakeElement = after
     }
 }
