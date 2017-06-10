@@ -24,9 +24,9 @@ struct Snake{
     }
     var speed : Double = 0.8;
     
-    init (atPoint: CGPoint){
+    init (atPoint: CGPoint, withSize: CGSize){
         snakeElements = [];
-        snakeElements.append(SnakeElement(atPoint: atPoint))
+        snakeElements.append(SnakeElement(atPoint: atPoint, withSize: withSize, after: nil))
     }
     
     

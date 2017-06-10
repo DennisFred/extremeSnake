@@ -60,7 +60,7 @@ class GameScene: SKScene {
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
         let middleColumn = Int((columns/2).rounded())
-        snake = Snake(atPoint: getCellPositionFromGrid(x: middleColumn, y: middleColumn))
+        snake = Snake(atPoint: getCellPositionFromGrid(x: middleColumn, y: middleColumn), withSize: cellSize!)
     }
     
     #if os(watchOS)
