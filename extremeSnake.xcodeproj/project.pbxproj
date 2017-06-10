@@ -45,6 +45,14 @@
 		9578FF1D1EEC49A2009817FF /* SnakeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF1B1EEC49A2009817FF /* SnakeElement.swift */; };
 		9578FF1E1EEC49A2009817FF /* SnakeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF1B1EEC49A2009817FF /* SnakeElement.swift */; };
 		9578FF1F1EEC49A2009817FF /* SnakeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF1B1EEC49A2009817FF /* SnakeElement.swift */; };
+		9578FF331EEC57DC009817FF /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF321EEC57DC009817FF /* Grid.swift */; };
+		9578FF341EEC57DC009817FF /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF321EEC57DC009817FF /* Grid.swift */; };
+		9578FF351EEC57DC009817FF /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF321EEC57DC009817FF /* Grid.swift */; };
+		9578FF361EEC57DC009817FF /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF321EEC57DC009817FF /* Grid.swift */; };
+		9578FF381EEC5800009817FF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF371EEC5800009817FF /* Cell.swift */; };
+		9578FF391EEC5800009817FF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF371EEC5800009817FF /* Cell.swift */; };
+		9578FF3A1EEC5800009817FF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF371EEC5800009817FF /* Cell.swift */; };
+		9578FF3B1EEC5800009817FF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF371EEC5800009817FF /* Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +127,8 @@
 		9578FEF01EEC4527009817FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9578FF161EEC493D009817FF /* Snake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
 		9578FF1B1EEC49A2009817FF /* SnakeElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnakeElement.swift; sourceTree = "<group>"; };
+		9578FF321EEC57DC009817FF /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		9578FF371EEC5800009817FF /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +258,8 @@
 			children = (
 				9578FF161EEC493D009817FF /* Snake.swift */,
 				9578FF1B1EEC49A2009817FF /* SnakeElement.swift */,
+				9578FF321EEC57DC009817FF /* Grid.swift */,
+				9578FF371EEC5800009817FF /* Cell.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -463,9 +475,11 @@
 			files = (
 				9578FF171EEC493D009817FF /* Snake.swift in Sources */,
 				9578FF1C1EEC49A2009817FF /* SnakeElement.swift in Sources */,
+				9578FF381EEC5800009817FF /* Cell.swift in Sources */,
 				9578FEF81EEC4527009817FF /* GameScene.swift in Sources */,
 				9578FEB41EEC4527009817FF /* GameViewController.swift in Sources */,
 				9578FEB21EEC4527009817FF /* AppDelegate.swift in Sources */,
+				9578FF331EEC57DC009817FF /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,9 +489,11 @@
 			files = (
 				9578FF181EEC493D009817FF /* Snake.swift in Sources */,
 				9578FF1D1EEC49A2009817FF /* SnakeElement.swift in Sources */,
+				9578FF391EEC5800009817FF /* Cell.swift in Sources */,
 				9578FEF91EEC4527009817FF /* GameScene.swift in Sources */,
 				9578FED31EEC4527009817FF /* ExtensionDelegate.swift in Sources */,
 				9578FED11EEC4527009817FF /* InterfaceController.swift in Sources */,
+				9578FF341EEC57DC009817FF /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,9 +503,11 @@
 			files = (
 				9578FF191EEC493D009817FF /* Snake.swift in Sources */,
 				9578FF1E1EEC49A2009817FF /* SnakeElement.swift in Sources */,
+				9578FF3A1EEC5800009817FF /* Cell.swift in Sources */,
 				9578FEFA1EEC4527009817FF /* GameScene.swift in Sources */,
 				9578FEDE1EEC4527009817FF /* GameViewController.swift in Sources */,
 				9578FEDC1EEC4527009817FF /* AppDelegate.swift in Sources */,
+				9578FF351EEC57DC009817FF /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,9 +517,11 @@
 			files = (
 				9578FF1A1EEC493D009817FF /* Snake.swift in Sources */,
 				9578FF1F1EEC49A2009817FF /* SnakeElement.swift in Sources */,
+				9578FF3B1EEC5800009817FF /* Cell.swift in Sources */,
 				9578FEFB1EEC4527009817FF /* GameScene.swift in Sources */,
 				9578FEEC1EEC4527009817FF /* GameViewController.swift in Sources */,
 				9578FEEA1EEC4527009817FF /* AppDelegate.swift in Sources */,
+				9578FF361EEC57DC009817FF /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
