@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct SnakeElement{
+    private let position: CGPoint
+    
+    init(atPoint: CGPoint) {
+        position = atPoint
+    }
+}
