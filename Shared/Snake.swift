@@ -37,9 +37,8 @@ class Snake: SKNode{
             steeringDirection = nil
         }
         
-        while getLength() > currentTargetLength{
-            let removedElement = children.dropFirst()
-            print(removedElement)
+        while getLength() >= currentTargetLength{
+            self.children.first!.removeFromParent()
         }
         
         if let position = getPosition(){
