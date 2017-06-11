@@ -120,7 +120,7 @@ class GameScene: SKScene {
         initializeSnake()
     }
     
-    func steeringInput(atPoint: CGPoint){
+    func pointBasedSteeringInput(atPoint: CGPoint){
         switch steeringMode{
         case .absoulteTouchPosition:
             if atPoint.x > 0{
@@ -134,7 +134,9 @@ class GameScene: SKScene {
                 snake.tryToChangeDirection(newDirection: .down)
             }
             break
-        case .onScreenControls: break
+        case .onScreenControls:
+            
+            break
         case .relativeTouchPosition :
             if let snakePosition = snake.getPosition(){
                 if atPoint.x > snakePosition.x{
@@ -151,14 +153,38 @@ class GameScene: SKScene {
             break
         }
     }
+    
+    func keyBasedSteeringInput(keyCode: Int){
+        let leftArrowKey = 123
+        let rightArrowKey = 124
+        let downArrowKey = 125
+        let upArrowKey = 126
+        
+        switch keyCode {
+        case leftArrowKey:
+            snake.tryToChangeDirection(newDirection: .left)
+            break
+        case rightArrowKey:
+            snake.tryToChangeDirection(newDirection: .right)
+            break
+        case upArrowKey:
+            snake.tryToChangeDirection(newDirection: .up)
+            break
+        case downArrowKey:
+            snake.tryToChangeDirection(newDirection: .down)
+            break
+        default:
+            break
+        }
+
+    }
 }
 
 #if os(iOS) || os(tvOS)
     // Touch-based event handling
     extension GameScene {
-        
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            
+            for t in touches { self.pointBasedSteeringInput(atPoint: t.location(in: self)) }
         }
     }
 #endif
@@ -169,7 +195,14 @@ class GameScene: SKScene {
         
         override func mouseDown(with event: NSEvent) {
             let mousePosition = event.location(in: self)
-            steeringInput(atPoint: mousePosition)
+            pointBasedSteeringInput(atPoint: mousePosition)
+        }
+        
+        
+        
+        
+        override func keyDown(with event: NSEvent) {
+            keyBasedSteeringInput(keyCode: Int(event.keyCode))
         }
         
     }
