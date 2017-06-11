@@ -19,8 +19,7 @@ struct GridManager{
         self.columns = columns
         self.scene = inScene
         
-        let cellWidth = scene.size.width > scene.size.height ? scene.size.height / CGFloat(self.columns) : scene.size.width / CGFloat(self.columns)
-        
+        let cellWidth = scene.size.height / CGFloat(self.columns)
         self.cellSize = CGSize(width: cellWidth, height: cellWidth)
         self.rows = Int(scene.size.height / cellSize.height)
     }
