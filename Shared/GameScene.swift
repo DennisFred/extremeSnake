@@ -15,7 +15,7 @@ import SpriteKit
 
 class GameScene: SKScene {
     fileprivate var label : SKLabelNode?
-    private var snake : Snake?
+    private var snake : Snake!
     private let columns: Int = 11
     private var rows: Int!
     private var cellSize: CGSize!
@@ -48,7 +48,7 @@ class GameScene: SKScene {
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
         
-        anchorPoint = CGPoint(x: 0, y: 0)
+        anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         let cellWidth = self.size.width > self.size.height ? self.size.height / CGFloat(columns) : self.size.width / CGFloat(columns)
         cellSize = CGSize(width: cellWidth, height: cellWidth)
@@ -56,6 +56,7 @@ class GameScene: SKScene {
         
         let middleColumn = columns/2
         snake = Snake(atPoint: getCellPositionFromGrid(x: middleColumn, y: middleColumn), withSize: cellSize!)
+        self.addChild(snake)
     }
     
     func spawnFood(){

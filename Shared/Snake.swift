@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import SpriteKit
 
 enum direction{
     case up, right, down, left
 }
 
-struct Snake{
+class Snake: SKNode{
     var snakeDirection = direction.right
     private var snakeElements : [SnakeElement]
     
@@ -21,6 +22,10 @@ struct Snake{
     init (atPoint: CGPoint, withSize: CGSize){
         snakeElements = [];
         snakeElements.append(SnakeElement(atPoint: atPoint, withSize: withSize, after: nil))
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func move(){
