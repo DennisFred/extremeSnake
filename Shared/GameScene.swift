@@ -21,6 +21,7 @@ enum SteeringMode{
 
 class GameScene: SKScene {
     fileprivate var label : SKLabelNode?
+    fileprivate var highscoreLabel : SKLabelNode?
     private var snake : Snake!
     private var lastFrame : TimeInterval?
     private var steeringMode = SteeringMode.relativeTouchPosition
@@ -43,6 +44,13 @@ class GameScene: SKScene {
     func setUpScene() {
         // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "//lengthLabel") as? SKLabelNode
+        if let label = self.label {
+            label.alpha = 0.0
+            label.run(SKAction.fadeIn(withDuration: 2.0))
+        }
+        
+        // Get highscoreLabel node from scene and store it for use later
+        self.highscoreLabel = self.childNode(withName: "//highscoreLabel") as? SKLabelNode
         if let label = self.label {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
@@ -117,12 +125,32 @@ class GameScene: SKScene {
     }
     
     func gameOver(){
+        tryToUpdateHighscore()
         killSnake()
-        initializeSnake()
         
         if let spawners = objectSpawners{
             for spawner in spawners {
                 spawner.removeAllObjects()
+            }
+        }
+        
+        
+        initializeSnake()
+
+    }
+    
+    func tryToUpdateHighscore(){
+        if let hLabel = self.highscoreLabel {
+            if let label = self.label{
+                if let labelValue = Int(label.text!){
+                    if let hLabelValue = Int(hLabel.text!){
+                        if labelValue > hLabelValue  {
+                            hLabel.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+                            hLabel.text = String(labelValue)
+                        }
+                    }
+                }
+
             }
         }
     }
