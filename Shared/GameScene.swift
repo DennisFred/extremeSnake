@@ -91,7 +91,9 @@ class GameScene: SKScene {
             lastFrame = currentTime
         }
         
-        if lastFrame! + 1 > currentTime{
+        let speed = snake.getSpeed()
+        
+        if lastFrame! + speed < currentTime{
             snake.move()
             lastFrame = currentTime
         }

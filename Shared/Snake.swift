@@ -54,6 +54,18 @@ class Snake: SKNode{
         }
     }
     
+    func getLength() -> Double{
+        return Double(self.children.count)
+    }
+    
+    func getSpeed() -> Double{
+        if getLength() < 5 {
+            return 1
+        } else {
+            return 1 * pow(0.95, getLength()-4)
+        }
+    }
+    
     func tryToChangeDirection(newDirection : direction){
         if((snakeDirection == .up || snakeDirection == .down) && (newDirection == .right || newDirection == .left)){
             steeringDirection = newDirection
