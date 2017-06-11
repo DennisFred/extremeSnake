@@ -31,7 +31,7 @@ class GameScene: SKScene {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     class func newGameScene() -> GameScene {
