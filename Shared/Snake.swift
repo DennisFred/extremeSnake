@@ -16,19 +16,16 @@ struct Snake{
     var snakeDirection = direction.right
     private var snakeElements : [SnakeElement]
     
-    
-    var length = 5 {
-        didSet(newLength){
-            speed *= 0.9;
-        }
-    }
-    var speed : Double = 0.8;
+    var reachedBaseLength = false
     
     init (atPoint: CGPoint, withSize: CGSize){
         snakeElements = [];
         snakeElements.append(SnakeElement(atPoint: atPoint, withSize: withSize, after: nil))
     }
     
+    func move(){
+        
+    }
     
     func getDirection() -> direction{
         return snakeDirection;

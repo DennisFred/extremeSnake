@@ -16,7 +16,8 @@ import SpriteKit
 class GameScene: SKScene {
     fileprivate var label : SKLabelNode?
     private var snake : Snake?
-    private let columns: CGFloat = 11
+    private let columns: Int = 11
+    private var rows: Int
     private var cellSize: CGSize?
     
     override init(size: CGSize) {
@@ -24,9 +25,9 @@ class GameScene: SKScene {
         
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
-        let cellWidth = self.size.width > self.size.height ? self.size.height / columns : self.size.width / columns
+        let cellWidth = self.size.width > self.size.height ? self.size.height / CGFloat(columns) : self.size.width / CGFloat(columns)
         cellSize = CGSize(width: cellWidth, height: cellWidth)
-        
+        rows = Int(self.size.height / cellSize!.height)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -59,8 +60,20 @@ class GameScene: SKScene {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
-        let middleColumn = Int((columns/2).rounded())
+        let middleColumn = columns/2
         snake = Snake(atPoint: getCellPositionFromGrid(x: middleColumn, y: middleColumn), withSize: cellSize!)
+    }
+    
+    func spawnFood(){
+        let randomColumn = Int(arc4random_uniform(UInt32(columns-1)));
+        let randomRow = Int(arc4random_uniform(UInt32(rows-1)));
+        let nodes = self.nodes(at: getCellPositionFromGrid(x: randomColumn, y: randomRow)).filter{type(of: $0) != SKLabelNode.self}
+        
+        if(nodes.count > 0){
+            spawnFood();
+        } else{
+            
+        }
     }
     
     #if os(watchOS)

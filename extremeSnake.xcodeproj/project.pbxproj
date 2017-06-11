@@ -49,6 +49,10 @@
 		9578FF391EEC5800009817FF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF371EEC5800009817FF /* Cell.swift */; };
 		9578FF3A1EEC5800009817FF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF371EEC5800009817FF /* Cell.swift */; };
 		9578FF3B1EEC5800009817FF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF371EEC5800009817FF /* Cell.swift */; };
+		9578FF421EED01CE009817FF /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF411EED01CE009817FF /* Food.swift */; };
+		9578FF431EED01CE009817FF /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF411EED01CE009817FF /* Food.swift */; };
+		9578FF441EED01CE009817FF /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF411EED01CE009817FF /* Food.swift */; };
+		9578FF451EED01CE009817FF /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF411EED01CE009817FF /* Food.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +128,7 @@
 		9578FF161EEC493D009817FF /* Snake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snake.swift; sourceTree = "<group>"; };
 		9578FF1B1EEC49A2009817FF /* SnakeElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnakeElement.swift; sourceTree = "<group>"; };
 		9578FF371EEC5800009817FF /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		9578FF411EED01CE009817FF /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +259,7 @@
 				9578FF161EEC493D009817FF /* Snake.swift */,
 				9578FF1B1EEC49A2009817FF /* SnakeElement.swift */,
 				9578FF371EEC5800009817FF /* Cell.swift */,
+				9578FF411EED01CE009817FF /* Food.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -467,6 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9578FF421EED01CE009817FF /* Food.swift in Sources */,
 				9578FF171EEC493D009817FF /* Snake.swift in Sources */,
 				9578FF1C1EEC49A2009817FF /* SnakeElement.swift in Sources */,
 				9578FF381EEC5800009817FF /* Cell.swift in Sources */,
@@ -480,6 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9578FF431EED01CE009817FF /* Food.swift in Sources */,
 				9578FF181EEC493D009817FF /* Snake.swift in Sources */,
 				9578FF1D1EEC49A2009817FF /* SnakeElement.swift in Sources */,
 				9578FF391EEC5800009817FF /* Cell.swift in Sources */,
@@ -493,6 +501,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9578FF441EED01CE009817FF /* Food.swift in Sources */,
 				9578FF191EEC493D009817FF /* Snake.swift in Sources */,
 				9578FF1E1EEC49A2009817FF /* SnakeElement.swift in Sources */,
 				9578FF3A1EEC5800009817FF /* Cell.swift in Sources */,
@@ -506,6 +515,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9578FF451EED01CE009817FF /* Food.swift in Sources */,
 				9578FF1A1EEC493D009817FF /* Snake.swift in Sources */,
 				9578FF1F1EEC49A2009817FF /* SnakeElement.swift in Sources */,
 				9578FF3B1EEC5800009817FF /* Cell.swift in Sources */,
