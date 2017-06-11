@@ -13,12 +13,16 @@ enum direction{
     case up, right, down, left
 }
 
+enum SnakeStatus{
+    case allGood, bidItself
+}
+
 class Snake: SKNode{
-    var snakeDirection = direction.up
-    var steeringDirection : direction?
-    var reachedBaseLength = false
-    let gridManager: GridManager
-    var currentTargetLength = 5
+    private var snakeDirection = direction.up
+    private var steeringDirection : direction?
+    private let gridManager: GridManager
+    private var currentTargetLength = 5
+    private var status = SnakeStatus.allGood
     
     
     init (atPoint: CGPoint, managedBy: GridManager){
@@ -43,7 +47,35 @@ class Snake: SKNode{
         
         if let position = getPosition(){
             let newPosition = gridManager.getNeighbouringCell(of: position, inDirection: snakeDirection)
+            
+            let nodesAtNewPosition = self.parent?.nodes(at: newPosition)
+            
+            reactToPotentialObstacles(nodes: nodesAtNewPosition)
+            
             self.addChild(SnakeElement(atPoint: newPosition, withSize: gridManager.cellSize, after: nil))
+        }
+    }
+    
+    func getStatus() -> SnakeStatus{
+        return status
+    }
+    
+    func reactToPotentialObstacles(nodes:[SKNode]?){
+        if let nodesAtPosition = nodes{
+            for node in nodesAtPosition {
+                if let cell = node as? Cell{
+                    switch cell.type{
+                    case .food(let nutritionalValue):
+                        currentTargetLength += nutritionalValue
+                        node.removeFromParent()
+                        break
+                    case .snakeElement:
+                        //Game Over!
+                        status = .bidItself
+                        break
+                    }
+                }
+            }
         }
     }
     

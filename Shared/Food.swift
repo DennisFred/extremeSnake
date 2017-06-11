@@ -10,12 +10,10 @@ import Foundation
 import SpriteKit
 
 class Food: SKSpriteNode, Cell{
-    internal let type = CellType.snakeElement
-    private let value : Int
+    internal let type : CellType
     
     init(atPoint: CGPoint, withSize: CGSize, value:Int) {
-        self.value = value
-
+        self.type = .food(value)
         super.init(texture: SKTexture(image: #imageLiteral(resourceName: "FoodSprite")), color:.clear, size: withSize)
         position = atPoint
     }

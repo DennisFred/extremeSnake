@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 enum CellType {
-    case food, snakeElement, empty
+    case food(Int), snakeElement
 }
 
 protocol Cell {

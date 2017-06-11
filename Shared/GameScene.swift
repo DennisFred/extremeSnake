@@ -18,6 +18,7 @@ enum SteeringMode{
     case absoulteTouchPosition, relativeTouchPosition, onScreenControls
 }
 
+
 class GameScene: SKScene {
     fileprivate var label : SKLabelNode?
     private var snake : Snake!
@@ -51,10 +52,16 @@ class GameScene: SKScene {
         
         gridManager = GridManager(columns: 11, sceneSize: self.size)
         
-        
+        initializeSnake()
+    }
+    
+    func initializeSnake(){
         snake = Snake(atPoint: gridManager.getCellPositionFromGrid(x: 0, y: 0), managedBy: gridManager)
-        
         self.addChild(snake)
+    }
+    
+    func killSnake(){
+        snake.removeFromParent()
     }
     
     func spawnFood(){
@@ -97,6 +104,24 @@ class GameScene: SKScene {
             snake.move()
             lastFrame = currentTime
         }
+        
+        if let label = self.label {
+            if let labelValue = Int(label.text!){
+                if labelValue < snake.getLength(){
+                    label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+                    label.text = String(snake.getLength())
+                }
+            }
+        }
+        
+        if snake.getStatus() == .bidItself{
+            gameOver()
+        }
+    }
+    
+    func gameOver(){
+        killSnake()
+        initializeSnake()
     }
     
     func steeringInput(atPoint: CGPoint){
