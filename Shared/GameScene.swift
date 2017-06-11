@@ -68,7 +68,7 @@ class GameScene: SKScene {
     
     #if os(watchOS)
     override func sceneDidLoad() {
-    self.setUpScene()
+        self.setUpScene()
     }
     #else
     override func didMove(to view: SKView) {
@@ -87,7 +87,6 @@ class GameScene: SKScene {
             snake.move()
             lastFrame = currentTime
             
-            
             drawLabel()
             
             trySpawningObjects()
@@ -100,7 +99,7 @@ class GameScene: SKScene {
     func drawLabel(){
         if let label = self.label {
             if let labelValue = Int(label.text!){
-                if labelValue != snake.getLength(){
+                if labelValue != snake.getPoints(){
                     label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
                     label.text = String(snake.getPoints())
                 }
