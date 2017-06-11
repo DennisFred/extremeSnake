@@ -53,9 +53,17 @@ struct GridManager{
             newPosition.y = (((currentPosition.y + 1) + (rows / 2)) % rows) - (rows/2)
             newPosition.x = currentPosition.x
             break
-        default:
-            newPosition.y = 0
-            newPosition.x = 0
+        case .down:
+            newPosition.y = (((currentPosition.y - 1) + (rows / 2)) % rows) - (rows/2)
+            newPosition.x = currentPosition.x
+            break
+        case .right:
+            newPosition.y = currentPosition.y
+            newPosition.x = (((currentPosition.x + 1) + (columns / 2)) % columns) - (columns/2)
+            break
+        case .left:
+            newPosition.y = currentPosition.y
+            newPosition.x = (((currentPosition.x - 1) + (columns / 2)) % columns) - (columns/2)
             break
         }
         return getCellPositionFromGrid(x: newPosition.x, y: newPosition.y)
