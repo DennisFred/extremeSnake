@@ -20,19 +20,6 @@ class GameScene: SKScene {
     private var rows: Int!
     private var cellSize: CGSize!
     
-    override init(size: CGSize) {
-        super.init(size: size)
-        
-        anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        
-        let cellWidth = self.size.width > self.size.height ? self.size.height / CGFloat(columns) : self.size.width / CGFloat(columns)
-        cellSize = CGSize(width: cellWidth, height: cellWidth)
-        rows = Int(self.size.height / cellSize!.height)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
     
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
@@ -60,6 +47,13 @@ class GameScene: SKScene {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
+        
+        anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        
+        let cellWidth = self.size.width > self.size.height ? self.size.height / CGFloat(columns) : self.size.width / CGFloat(columns)
+        cellSize = CGSize(width: cellWidth, height: cellWidth)
+        rows = Int(self.size.height / cellSize!.height)
+        
         let middleColumn = columns/2
         snake = Snake(atPoint: getCellPositionFromGrid(x: middleColumn, y: middleColumn), withSize: cellSize!)
     }
