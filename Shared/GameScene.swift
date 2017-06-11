@@ -13,13 +13,17 @@ import SpriteKit
     typealias SKColor = UIColor
 #endif
 
+enum SteeringMode{
+    case absoulteTouchPosition, relativeTouchPosition, onScreenControls
+}
+
 class GameScene: SKScene {
     fileprivate var label : SKLabelNode?
     private var snake : Snake!
     private let columns: Int = 11
+    private var steeringMode = SteeringMode.absoulteTouchPosition
     private var rows: Int!
     private var cellSize: CGSize!
-    
     
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
@@ -48,7 +52,6 @@ class GameScene: SKScene {
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
         
-        
         let cellWidth = self.size.width > self.size.height ? self.size.height / CGFloat(columns) : self.size.width / CGFloat(columns)
         cellSize = CGSize(width: cellWidth, height: cellWidth)
         rows = Int(self.size.height / cellSize!.height)
@@ -73,9 +76,11 @@ class GameScene: SKScene {
         }
     }
     
+    
+    
     #if os(watchOS)
     override func sceneDidLoad() {
-        self.setUpScene()
+    self.setUpScene()
     }
     #else
     override func didMove(to view: SKView) {
@@ -86,31 +91,62 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
+    
+    func steeringInput(atPoint: CGPoint){
+        switch steeringMode{
+        case .absoulteTouchPosition:
+            if atPoint.x > 0{
+                snake.tryToChangeDirection(newDirection: .right)
+            } else {
+                snake.tryToChangeDirection(newDirection: .left)
+            }
+            if atPoint.y > 0{
+                snake.tryToChangeDirection(newDirection: .up)
+            } else {
+                snake.tryToChangeDirection(newDirection: .down)
+            }
+            break
+        case .onScreenControls: break
+        case .relativeTouchPosition :
+            if let snakePosition = snake.getPosition(){
+                if atPoint.x > snakePosition.x{
+                    snake.tryToChangeDirection(newDirection: .right)
+                } else {
+                    snake.tryToChangeDirection(newDirection: .left)
+                }
+                if atPoint.y > snakePosition.y{
+                    snake.tryToChangeDirection(newDirection: .up)
+                } else {
+                    snake.tryToChangeDirection(newDirection: .down)
+                }
+            }
+            break
+        }
+    }
 }
 
 #if os(iOS) || os(tvOS)
-// Touch-based event handling
-extension GameScene {
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-        }
+    // Touch-based event handling
+    extension GameScene {
         
+        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            if let label = self.label {
+                label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+            }
+            
+        }
     }
-}
 #endif
 
 #if os(OSX)
-// Mouse-based event handling
-extension GameScene {
-
-    override func mouseDown(with event: NSEvent) {
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+    // Mouse-based event handling
+    extension GameScene {
+        
+        override func mouseDown(with event: NSEvent) {
+            let mousePosition = event.location(in: self)
+            steeringInput(atPoint: mousePosition)
         }
+        
     }
-    
-}
 #endif
 

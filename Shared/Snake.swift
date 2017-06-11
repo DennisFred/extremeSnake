@@ -15,7 +15,7 @@ enum direction{
 
 class Snake: SKNode{
     var snakeDirection = direction.right
-    
+    var steeringDirection : direction?
     var reachedBaseLength = false
     
     init (atPoint: CGPoint, withSize: CGSize){
@@ -28,6 +28,10 @@ class Snake: SKNode{
     }
     
     func move(){
+        if let newDirection = steeringDirection{
+            snakeDirection = newDirection
+            steeringDirection = nil
+        }
         
     }
     
@@ -35,12 +39,20 @@ class Snake: SKNode{
         return snakeDirection;
     }
     
+    func getPosition() -> CGPoint?{
+        if let pos =  self.children.last?.position{
+            return pos
+        } else {
+            return nil
+        }
+    }
+    
     func tryToChangeDirection(newDirection : direction){
         if((snakeDirection == .up || snakeDirection == .down) && (newDirection == .right || newDirection == .left)){
-            snakeDirection = newDirection
+            steeringDirection = newDirection
         }
         if((snakeDirection == .right || snakeDirection == .left) && (newDirection == .up || newDirection == .down)){
-            snakeDirection = newDirection
+            steeringDirection = newDirection
         }
     }
 }
