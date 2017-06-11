@@ -10,4 +10,5 @@ import Foundation
 
 protocol ObjectSpawner {
     func tryToSpawnObjects()
+    func removeAllObjects()
 }
