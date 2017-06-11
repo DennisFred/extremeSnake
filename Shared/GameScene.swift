@@ -48,7 +48,7 @@ class GameScene: SKScene {
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
         
-        anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        anchorPoint = CGPoint(x: 0, y: 0)
         
         let cellWidth = self.size.width > self.size.height ? self.size.height / CGFloat(columns) : self.size.width / CGFloat(columns)
         cellSize = CGSize(width: cellWidth, height: cellWidth)
