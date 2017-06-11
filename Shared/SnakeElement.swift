@@ -12,14 +12,19 @@ import SpriteKit
 class SnakeElement: SKSpriteNode, Cell{
     internal let type = CellType.snakeElement
     
-    private var previousSnakeElement : SnakeElement?
-    private var nextSnakeElement : SnakeElement?
+    let direction : direction
     
-    init(atPoint: CGPoint, withSize: CGSize, after:SnakeElement?) {
-        super.init(texture: SKTexture(image: #imageLiteral(resourceName: "SnakeElementSprite")), color:.clear, size: withSize)
-        position = atPoint
-        previousSnakeElement = after
+    init(withSize: CGSize, pointing: direction, atPosition: CGPoint) {
+        direction = pointing
+        super.init(texture: SKTexture(image: #imageLiteral(resourceName: "head")), color:.clear, size: withSize)
+        self.position = atPosition
     }
+    
+    func updateTexture(newTexture: SKTexture){
+        self.texture = newTexture
+    }
+    
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -9,6 +9,8 @@
 import Foundation
 import SpriteKit
 
+
+
 enum direction{
     case up, right, down, left
 }
@@ -18,7 +20,7 @@ enum SnakeStatus{
 }
 
 class Snake: SKNode{
-    private var snakeDirection = direction.up
+    private var snakeDirection = direction.right
     private var steeringDirection : direction?
     private let gridManager: GridManager
     private var currentTargetLength = 5
@@ -28,7 +30,7 @@ class Snake: SKNode{
     init (atPoint: CGPoint, managedBy: GridManager){
         self.gridManager = managedBy
         super.init()
-        self.addChild(SnakeElement(atPoint: atPoint, withSize: gridManager.cellSize, after: nil))
+        self.addChild(SnakeElement(withSize: gridManager.cellSize, pointing: snakeDirection, atPosition: atPoint))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,8 +54,62 @@ class Snake: SKNode{
             
             reactToPotentialObstacles(nodes: nodesAtNewPosition)
             
-            self.addChild(SnakeElement(atPoint: newPosition, withSize: gridManager.cellSize, after: nil))
+            let formerHead = self.children.last! as! SnakeElement
+            
+            self.addChild(SnakeElement(withSize: gridManager.cellSize, pointing: snakeDirection, atPosition: newPosition))
+            
+            let currentHead = self.children.last! as! SnakeElement
+
+            rotate(node: currentHead, toDirection: snakeDirection)
+            
+            formerHead.updateTexture(newTexture: determineTexture(originDirection: formerHead.direction, destinationDirection: snakeDirection))
         }
+        
+        if let newTail = self.children.first as? SnakeElement{
+            newTail.updateTexture(newTexture: SKTexture(image: #imageLiteral(resourceName: "tail")))
+            if self.children.count > 1, let secondElement = self.children[1] as? SnakeElement{
+                rotate(node: newTail, toDirection: secondElement.direction)
+            }
+            
+        }
+        
+        
+    }
+    
+    func rotate(node:SKNode, toDirection:direction){
+        switch toDirection {
+        case .right:
+            node.zRotation = 0
+            break
+        case .left:
+            node.zRotation = CGFloat.pi
+            break
+        case .up:
+            node.zRotation = CGFloat.pi / 2
+            break
+        case .down:
+            node.zRotation = CGFloat.pi * 1.5
+            break
+        }
+
+    }
+    
+    func determineTexture(originDirection:direction, destinationDirection:direction) -> SKTexture{
+        var texture: SKTexture
+        
+        if originDirection == destinationDirection{
+            texture = SKTexture(image:#imageLiteral(resourceName: "straight"))
+        } else {
+            switch (originDirection, destinationDirection){
+            case (.left, .up), (.up, .right), (.right, .down), (.down, .left):
+                texture = SKTexture(image:#imageLiteral(resourceName: "rightBend"))
+                break
+            default:
+                texture = SKTexture(image:#imageLiteral(resourceName: "leftBend"))
+                break
+            }
+        }
+        return  texture
     }
     
     func getStatus() -> SnakeStatus{
