@@ -15,13 +15,12 @@ enum direction{
 
 class Snake: SKNode{
     var snakeDirection = direction.right
-    private var snakeElements : [SnakeElement]
     
     var reachedBaseLength = false
     
     init (atPoint: CGPoint, withSize: CGSize){
-        snakeElements = [];
-        snakeElements.append(SnakeElement(atPoint: atPoint, withSize: withSize, after: nil))
+        super.init()
+        self.addChild(SnakeElement(atPoint: atPoint, withSize: withSize, after: nil))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,7 +35,7 @@ class Snake: SKNode{
         return snakeDirection;
     }
     
-    mutating func tryToChangeDirection(newDirection : direction){
+    func tryToChangeDirection(newDirection : direction){
         if((snakeDirection == .up || snakeDirection == .down) && (newDirection == .right || newDirection == .left)){
             snakeDirection = newDirection
         }
