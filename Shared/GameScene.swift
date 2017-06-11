@@ -48,14 +48,13 @@ class GameScene: SKScene {
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
         
-        anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         let cellWidth = self.size.width > self.size.height ? self.size.height / CGFloat(columns) : self.size.width / CGFloat(columns)
         cellSize = CGSize(width: cellWidth, height: cellWidth)
         rows = Int(self.size.height / cellSize!.height)
         
-        let middleColumn = columns/2
-        snake = Snake(atPoint: getCellPositionFromGrid(x: middleColumn, y: middleColumn), withSize: cellSize!)
+        
+        snake = Snake(atPoint: getCellPositionFromGrid(x: 0, y: 0), withSize: cellSize!)
         self.addChild(snake)
     }
     
