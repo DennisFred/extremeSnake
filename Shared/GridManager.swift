@@ -10,16 +10,16 @@ import Foundation
 import SpriteKit
 
 struct GridManager{
-    let columns: Int!
+    var columns: Int!
     var rows: Int!
     var cellSize: CGSize!
-    let scene: SKScene
+    var scene: SKScene
     
     init(columns: Int, inScene: SKScene) {
         self.columns = columns
         self.scene = inScene
         
-        let cellWidth = scene.size.height / CGFloat(self.columns)
+        let cellWidth = (scene.size.width / CGFloat(self.columns)).rounded(.down)
         self.cellSize = CGSize(width: cellWidth, height: cellWidth)
         self.rows = Int(scene.size.height / cellSize.height)
     }
@@ -60,6 +60,7 @@ struct GridManager{
     
     func getNeighbouringCell(of: CGPoint, inDirection: direction) -> CGPoint{
         let currentPosition = getGridPositionFromCell(point: of)
+
         let newPosition: (x:Int, y:Int)
         switch inDirection {
         case .up:

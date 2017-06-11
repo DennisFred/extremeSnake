@@ -18,6 +18,7 @@ class SnakeElement: SKSpriteNode, Cell{
         direction = pointing
         super.init(texture: SKTexture(image: #imageLiteral(resourceName: "head")), color:.clear, size: withSize)
         self.position = atPosition
+    
     }
     
     func updateTexture(newTexture: SKTexture){
