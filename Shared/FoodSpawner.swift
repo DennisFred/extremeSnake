@@ -22,7 +22,6 @@ class FoodSpawner : ObjectSpawner{
         if scene.children.filter({$0 is Food}).count == 0 {
             spawnFood()
         }
-        print(scene.children.count)
     }
     
     func spawnFood(){
