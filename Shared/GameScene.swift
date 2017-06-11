@@ -17,8 +17,8 @@ class GameScene: SKScene {
     fileprivate var label : SKLabelNode?
     private var snake : Snake?
     private let columns: Int = 11
-    private var rows: Int
-    private var cellSize: CGSize?
+    private var rows: Int!
+    private var cellSize: CGSize!
     
     override init(size: CGSize) {
         super.init(size: size)
