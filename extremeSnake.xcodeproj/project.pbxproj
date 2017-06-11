@@ -57,7 +57,14 @@
 		9578FF431EED01CE009817FF /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF411EED01CE009817FF /* Food.swift */; };
 		9578FF441EED01CE009817FF /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF411EED01CE009817FF /* Food.swift */; };
 		9578FF451EED01CE009817FF /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF411EED01CE009817FF /* Food.swift */; };
-		95EA3CB21EED6812002C5F49 /* ObjectSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB11EED6812002C5F49 /* ObjectSpawner.swift */; };
+		95EA3CB41EED69D2002C5F49 /* ObjectSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB31EED69D2002C5F49 /* ObjectSpawner.swift */; };
+		95EA3CB51EED69D2002C5F49 /* ObjectSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB31EED69D2002C5F49 /* ObjectSpawner.swift */; };
+		95EA3CB61EED69D2002C5F49 /* ObjectSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB31EED69D2002C5F49 /* ObjectSpawner.swift */; };
+		95EA3CB71EED69D2002C5F49 /* ObjectSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB31EED69D2002C5F49 /* ObjectSpawner.swift */; };
+		95EA3CB91EED6A15002C5F49 /* FoodSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB81EED6A15002C5F49 /* FoodSpawner.swift */; };
+		95EA3CBA1EED6A15002C5F49 /* FoodSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB81EED6A15002C5F49 /* FoodSpawner.swift */; };
+		95EA3CBB1EED6A15002C5F49 /* FoodSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB81EED6A15002C5F49 /* FoodSpawner.swift */; };
+		95EA3CBC1EED6A15002C5F49 /* FoodSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB81EED6A15002C5F49 /* FoodSpawner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,7 +142,8 @@
 		9578FF1B1EEC49A2009817FF /* SnakeElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnakeElement.swift; sourceTree = "<group>"; };
 		9578FF371EEC5800009817FF /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		9578FF411EED01CE009817FF /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
-		95EA3CB11EED6812002C5F49 /* ObjectSpawner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectSpawner.swift; sourceTree = "<group>"; };
+		95EA3CB31EED69D2002C5F49 /* ObjectSpawner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectSpawner.swift; sourceTree = "<group>"; };
+		95EA3CB81EED6A15002C5F49 /* FoodSpawner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodSpawner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				9578FF371EEC5800009817FF /* Cell.swift */,
-				95EA3CB11EED6812002C5F49 /* ObjectSpawner.swift */,
+				95EA3CB31EED69D2002C5F49 /* ObjectSpawner.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -285,6 +293,7 @@
 				9578FF161EEC493D009817FF /* Snake.swift */,
 				9578FF1B1EEC49A2009817FF /* SnakeElement.swift */,
 				9578FF411EED01CE009817FF /* Food.swift */,
+				95EA3CB81EED6A15002C5F49 /* FoodSpawner.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -504,7 +513,8 @@
 				9578FF381EEC5800009817FF /* Cell.swift in Sources */,
 				9578FEF81EEC4527009817FF /* GameScene.swift in Sources */,
 				95691D5A1EED477B00C304CE /* GridManager.swift in Sources */,
-				95EA3CB21EED6812002C5F49 /* ObjectSpawner.swift in Sources */,
+				95EA3CB91EED6A15002C5F49 /* FoodSpawner.swift in Sources */,
+				95EA3CB41EED69D2002C5F49 /* ObjectSpawner.swift in Sources */,
 				9578FEB41EEC4527009817FF /* GameViewController.swift in Sources */,
 				9578FEB21EEC4527009817FF /* AppDelegate.swift in Sources */,
 			);
@@ -520,6 +530,8 @@
 				9578FF391EEC5800009817FF /* Cell.swift in Sources */,
 				9578FEF91EEC4527009817FF /* GameScene.swift in Sources */,
 				95691D5B1EED477B00C304CE /* GridManager.swift in Sources */,
+				95EA3CBA1EED6A15002C5F49 /* FoodSpawner.swift in Sources */,
+				95EA3CB51EED69D2002C5F49 /* ObjectSpawner.swift in Sources */,
 				9578FED31EEC4527009817FF /* ExtensionDelegate.swift in Sources */,
 				9578FED11EEC4527009817FF /* InterfaceController.swift in Sources */,
 			);
@@ -535,6 +547,8 @@
 				9578FF3A1EEC5800009817FF /* Cell.swift in Sources */,
 				9578FEFA1EEC4527009817FF /* GameScene.swift in Sources */,
 				95691D5C1EED477B00C304CE /* GridManager.swift in Sources */,
+				95EA3CBB1EED6A15002C5F49 /* FoodSpawner.swift in Sources */,
+				95EA3CB61EED69D2002C5F49 /* ObjectSpawner.swift in Sources */,
 				9578FEDE1EEC4527009817FF /* GameViewController.swift in Sources */,
 				9578FEDC1EEC4527009817FF /* AppDelegate.swift in Sources */,
 			);
@@ -550,6 +564,8 @@
 				9578FF3B1EEC5800009817FF /* Cell.swift in Sources */,
 				9578FEFB1EEC4527009817FF /* GameScene.swift in Sources */,
 				95691D5D1EED477B00C304CE /* GridManager.swift in Sources */,
+				95EA3CBC1EED6A15002C5F49 /* FoodSpawner.swift in Sources */,
+				95EA3CB71EED69D2002C5F49 /* ObjectSpawner.swift in Sources */,
 				9578FEEC1EEC4527009817FF /* GameViewController.swift in Sources */,
 				9578FEEA1EEC4527009817FF /* AppDelegate.swift in Sources */,
 			);

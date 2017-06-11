@@ -7,18 +7,22 @@
 //
 
 import Foundation
+import SpriteKit
 
 struct GridManager{
     let columns: Int!
     var rows: Int!
     var cellSize: CGSize!
+    let scene: SKScene
     
-    init(columns: Int, sceneSize: CGSize) {
+    init(columns: Int, inScene: SKScene) {
         self.columns = columns
+        self.scene = inScene
         
-        let cellWidth = sceneSize.width > sceneSize.height ? sceneSize.height / CGFloat(self.columns) : sceneSize.width / CGFloat(self.columns)
+        let cellWidth = scene.size.width > scene.size.height ? scene.size.height / CGFloat(self.columns) : scene.size.width / CGFloat(self.columns)
+        
         self.cellSize = CGSize(width: cellWidth, height: cellWidth)
-        self.rows = Int(sceneSize.height / cellSize.height)
+        self.rows = Int(scene.size.height / cellSize.height)
     }
     
     func getCellPositionFromGrid(x: Int, y: Int) -> CGPoint{
@@ -42,6 +46,17 @@ struct GridManager{
         let randomRow = Int(arc4random_uniform(UInt32(rows-1)));
         
         return getCellPositionFromGrid(x: randomColumn, y: randomRow)
+    }
+    
+    func getRandomEmptyCellPosition() -> CGPoint{
+        let cellPosition = getRandomCellPosition()
+        let cellNodes = scene.nodes(at: cellPosition).filter{$0 is Cell}
+        
+        if(cellNodes.count > 0){
+            return getRandomEmptyCellPosition()
+        } else {
+            return cellPosition
+        }
     }
     
     func getNeighbouringCell(of: CGPoint, inDirection: direction) -> CGPoint{

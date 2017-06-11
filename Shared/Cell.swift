@@ -16,3 +16,5 @@ enum CellType {
 protocol Cell {
     var type: CellType { get }
 }
+
+

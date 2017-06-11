@@ -25,7 +25,7 @@ class GameScene: SKScene {
     private var lastFrame : TimeInterval?
     private var steeringMode = SteeringMode.relativeTouchPosition
     private var gridManager: GridManager!
-    private var objectSpawner: [ObjectSpawner]?
+    private var objectSpawners: [ObjectSpawner]?
     
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
@@ -48,8 +48,10 @@ class GameScene: SKScene {
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
         
+        gridManager = GridManager(columns: 11, inScene: self)
         
-        gridManager = GridManager(columns: 11, sceneSize: self.size)
+        objectSpawners = []
+        objectSpawners?.append(FoodSpawner(inScene: self, managedBy: gridManager))
         
         initializeSnake()
     }
@@ -62,18 +64,6 @@ class GameScene: SKScene {
     func killSnake(){
         snake.removeFromParent()
     }
-    
-    func spawnFood(){
-        let cellPosition = gridManager.getRandomCellPosition()
-        let nodes = self.nodes(at: cellPosition).filter{type(of: $0) != SKLabelNode.self}
-        
-        if(nodes.count > 0){
-            spawnFood();
-        } else{
-            self.addChild(Food(atPoint: cellPosition, withSize: gridManager.cellSize))
-        }
-    }
-    
     
     #if os(watchOS)
     override func sceneDidLoad() {
@@ -95,20 +85,30 @@ class GameScene: SKScene {
         if lastFrame! + speed < currentTime{
             snake.move()
             lastFrame = currentTime
-        
-        
-        if let label = self.label {
-            if let labelValue = Int(label.text!){
-                if labelValue < snake.getLength(){
-                    label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-                    label.text = String(snake.getLength())
+            
+            
+            if let label = self.label {
+                if let labelValue = Int(label.text!){
+                    if labelValue < snake.getLength(){
+                        label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+                        label.text = String(snake.getLength())
+                    }
                 }
             }
+            
+            trySpawningObjects()
+            
+            if snake.getStatus() == .bidItself{
+                gameOver()
+            }
         }
-        
-        if snake.getStatus() == .bidItself{
-            gameOver()
-        }
+    }
+    
+    func trySpawningObjects(){
+        if let spawners = objectSpawners{
+            for spawner in spawners {
+                spawner.tryToSpawnObjects()
+            }
         }
     }
     
