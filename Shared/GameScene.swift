@@ -56,7 +56,7 @@ class GameScene: SKScene {
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
         
-        gridManager = GridManager(columns: 11, inScene: self)
+        gridManager = GridManager(/*columns: 11,*/ inScene: self)
         
         objectSpawners = []
         objectSpawners?.append(FoodSpawner(inScene: self, managedBy: gridManager))

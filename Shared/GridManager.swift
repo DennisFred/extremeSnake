@@ -14,13 +14,22 @@ struct GridManager{
     var rows: Int!
     var cellSize: CGSize!
     let scene: SKScene
-    
+    let roughAmountOfCells = 128
+    /*
     init(columns: Int, inScene: SKScene) {
         self.columns = columns
         self.scene = inScene
         
         let cellWidth = scene.size.height / CGFloat(self.columns)
         self.cellSize = CGSize(width: cellWidth, height: cellWidth)
+        self.rows = Int(scene.size.height / cellSize.height)
+    }
+    */
+    init(inScene: SKScene){
+        self.scene = inScene
+        let cellWidth = sqrt(Double(scene.size.height * scene.size.width) / Double(roughAmountOfCells))
+        self.cellSize = CGSize(width: cellWidth, height: cellWidth)
+        self.columns = Int(scene.size.width / cellSize.height)
         self.rows = Int(scene.size.height / cellSize.height)
     }
     
