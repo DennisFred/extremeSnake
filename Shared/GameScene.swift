@@ -67,12 +67,15 @@ class GameScene: SKScene {
     func spawnFood(){
         let randomColumn = Int(arc4random_uniform(UInt32(columns-1)));
         let randomRow = Int(arc4random_uniform(UInt32(rows-1)));
-        let nodes = self.nodes(at: getCellPositionFromGrid(x: randomColumn, y: randomRow)).filter{type(of: $0) != SKLabelNode.self}
+        
+        let cellPosition = getCellPositionFromGrid(x: randomColumn, y: randomRow)
+        
+        let nodes = self.nodes(at: cellPosition).filter{type(of: $0) != SKLabelNode.self}
         
         if(nodes.count > 0){
             spawnFood();
         } else{
-            
+            self.addChild(Food(atPoint: cellPosition, withSize: cellSize!))
         }
     }
     
