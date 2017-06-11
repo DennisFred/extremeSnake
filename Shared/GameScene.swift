@@ -66,6 +66,7 @@ class GameScene: SKScene {
         snake.removeFromParent()
     }
     
+    
     #if os(watchOS)
     override func sceneDidLoad() {
         self.setUpScene()
@@ -117,6 +118,12 @@ class GameScene: SKScene {
     func gameOver(){
         killSnake()
         initializeSnake()
+        
+        if let spawners = objectSpawners{
+            for spawner in spawners {
+                spawner.removeAllObjects()
+            }
+        }
     }
     
     func pointBasedSteeringInput(atPoint: CGPoint){

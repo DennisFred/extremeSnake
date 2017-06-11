@@ -29,4 +29,10 @@ class FoodSpawner : ObjectSpawner{
         scene.addChild(Food(atPoint: cellPosition, withSize: gridManager.cellSize))
         
     }
+    
+    func removeAllObjects(){
+        for child in scene.children.filter({$0 is Food}){
+            child.removeFromParent()
+        }
+    }
 }
