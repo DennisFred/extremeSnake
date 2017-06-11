@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95691D5A1EED477B00C304CE /* GridManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95691D591EED477B00C304CE /* GridManager.swift */; };
+		95691D5B1EED477B00C304CE /* GridManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95691D591EED477B00C304CE /* GridManager.swift */; };
+		95691D5C1EED477B00C304CE /* GridManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95691D591EED477B00C304CE /* GridManager.swift */; };
+		95691D5D1EED477B00C304CE /* GridManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95691D591EED477B00C304CE /* GridManager.swift */; };
 		9578FEB21EEC4527009817FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FEB11EEC4527009817FF /* AppDelegate.swift */; };
 		9578FEB41EEC4527009817FF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FEB31EEC4527009817FF /* GameViewController.swift */; };
 		9578FEB71EEC4527009817FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9578FEB51EEC4527009817FF /* Main.storyboard */; };
@@ -98,6 +102,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		95691D591EED477B00C304CE /* GridManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridManager.swift; sourceTree = "<group>"; };
 		9578FEA61EEC4526009817FF /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		9578FEA71EEC4526009817FF /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		9578FEA81EEC4526009817FF /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -163,6 +168,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95691D571EED46B300C304CE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9578FF371EEC5800009817FF /* Cell.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		95691D581EED475300C304CE /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				95691D591EED477B00C304CE /* GridManager.swift */,
+			);
+			name = Structs;
+			sourceTree = "<group>";
+		};
 		9578FEA01EEC4526009817FF = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +200,8 @@
 		9578FEA51EEC4526009817FF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				95691D581EED475300C304CE /* Structs */,
+				95691D571EED46B300C304CE /* Protocols */,
 				9578FF151EEC48FD009817FF /* Classes */,
 				9578FEA61EEC4526009817FF /* Actions.sks */,
 				9578FEA71EEC4526009817FF /* GameScene.sks */,
@@ -258,7 +281,6 @@
 			children = (
 				9578FF161EEC493D009817FF /* Snake.swift */,
 				9578FF1B1EEC49A2009817FF /* SnakeElement.swift */,
-				9578FF371EEC5800009817FF /* Cell.swift */,
 				9578FF411EED01CE009817FF /* Food.swift */,
 			);
 			name = Classes;
@@ -478,6 +500,7 @@
 				9578FF1C1EEC49A2009817FF /* SnakeElement.swift in Sources */,
 				9578FF381EEC5800009817FF /* Cell.swift in Sources */,
 				9578FEF81EEC4527009817FF /* GameScene.swift in Sources */,
+				95691D5A1EED477B00C304CE /* GridManager.swift in Sources */,
 				9578FEB41EEC4527009817FF /* GameViewController.swift in Sources */,
 				9578FEB21EEC4527009817FF /* AppDelegate.swift in Sources */,
 			);
@@ -492,6 +515,7 @@
 				9578FF1D1EEC49A2009817FF /* SnakeElement.swift in Sources */,
 				9578FF391EEC5800009817FF /* Cell.swift in Sources */,
 				9578FEF91EEC4527009817FF /* GameScene.swift in Sources */,
+				95691D5B1EED477B00C304CE /* GridManager.swift in Sources */,
 				9578FED31EEC4527009817FF /* ExtensionDelegate.swift in Sources */,
 				9578FED11EEC4527009817FF /* InterfaceController.swift in Sources */,
 			);
@@ -506,6 +530,7 @@
 				9578FF1E1EEC49A2009817FF /* SnakeElement.swift in Sources */,
 				9578FF3A1EEC5800009817FF /* Cell.swift in Sources */,
 				9578FEFA1EEC4527009817FF /* GameScene.swift in Sources */,
+				95691D5C1EED477B00C304CE /* GridManager.swift in Sources */,
 				9578FEDE1EEC4527009817FF /* GameViewController.swift in Sources */,
 				9578FEDC1EEC4527009817FF /* AppDelegate.swift in Sources */,
 			);
@@ -520,6 +545,7 @@
 				9578FF1F1EEC49A2009817FF /* SnakeElement.swift in Sources */,
 				9578FF3B1EEC5800009817FF /* Cell.swift in Sources */,
 				9578FEFB1EEC4527009817FF /* GameScene.swift in Sources */,
+				95691D5D1EED477B00C304CE /* GridManager.swift in Sources */,
 				9578FEEC1EEC4527009817FF /* GameViewController.swift in Sources */,
 				9578FEEA1EEC4527009817FF /* AppDelegate.swift in Sources */,
 			);
@@ -862,6 +888,7 @@
 				9578FF041EEC4527009817FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9578FF061EEC4527009817FF /* Build configuration list for PBXNativeTarget "watchOS App" */ = {
 			isa = XCConfigurationList;
@@ -870,6 +897,7 @@
 				9578FF081EEC4527009817FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9578FF0A1EEC4527009817FF /* Build configuration list for PBXNativeTarget "iOS" */ = {
 			isa = XCConfigurationList;
@@ -878,6 +906,7 @@
 				9578FF0C1EEC4527009817FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9578FF0D1EEC4527009817FF /* Build configuration list for PBXNativeTarget "tvOS" */ = {
 			isa = XCConfigurationList;
@@ -886,6 +915,7 @@
 				9578FF0F1EEC4527009817FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9578FF101EEC4527009817FF /* Build configuration list for PBXNativeTarget "macOS" */ = {
 			isa = XCConfigurationList;
@@ -894,6 +924,7 @@
 				9578FF121EEC4527009817FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

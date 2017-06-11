@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+
 #if os(watchOS)
     import WatchKit
     // SKColor typealias does not seem to be exposed on watchOS SpriteKit
@@ -20,10 +21,11 @@ enum SteeringMode{
 class GameScene: SKScene {
     fileprivate var label : SKLabelNode?
     private var snake : Snake!
-    private let columns: Int = 11
+    
     private var steeringMode = SteeringMode.absoulteTouchPosition
-    private var rows: Int!
-    private var cellSize: CGSize!
+    
+    private var gridManager: GridManager!
+    
     
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
@@ -38,12 +40,6 @@ class GameScene: SKScene {
         return scene
     }
     
-    func getCellPositionFromGrid(x: Int, y: Int) -> CGPoint{
-        let cellWidth = cellSize!.width
-        return CGPoint(x:  CGFloat(x) * cellWidth, y: CGFloat(y) * cellWidth)
-        
-    }
-    
     func setUpScene() {
         // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "//lengthLabel") as? SKLabelNode
@@ -52,30 +48,24 @@ class GameScene: SKScene {
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
         
-        let cellWidth = self.size.width > self.size.height ? self.size.height / CGFloat(columns) : self.size.width / CGFloat(columns)
-        cellSize = CGSize(width: cellWidth, height: cellWidth)
-        rows = Int(self.size.height / cellSize!.height)
+        
+        gridManager = GridManager(columns: 11, sceneSize: self.size)
         
         
-        snake = Snake(atPoint: getCellPositionFromGrid(x: 0, y: 0), withSize: cellSize!)
+        snake = Snake(atPoint: gridManager.getCellPositionFromGrid(x: 0, y: 0), withSize: gridManager.cellSize)
         self.addChild(snake)
     }
     
     func spawnFood(){
-        let randomColumn = Int(arc4random_uniform(UInt32(columns-1)));
-        let randomRow = Int(arc4random_uniform(UInt32(rows-1)));
-        
-        let cellPosition = getCellPositionFromGrid(x: randomColumn, y: randomRow)
-        
+        let cellPosition = gridManager.getRandomCellPosition()
         let nodes = self.nodes(at: cellPosition).filter{type(of: $0) != SKLabelNode.self}
         
         if(nodes.count > 0){
             spawnFood();
         } else{
-            self.addChild(Food(atPoint: cellPosition, withSize: cellSize!))
+            self.addChild(Food(atPoint: cellPosition, withSize: gridManager.cellSize))
         }
     }
-    
     
     
     #if os(watchOS)
@@ -90,6 +80,12 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        /*
+         if let label = self.label {
+         label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+         }
+
+         */
     }
     
     func steeringInput(atPoint: CGPoint){
@@ -130,9 +126,6 @@ class GameScene: SKScene {
     extension GameScene {
         
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            if let label = self.label {
-                label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-            }
             
         }
     }
