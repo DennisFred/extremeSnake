@@ -42,8 +42,8 @@ struct GridManager{
     }
     
     func getRandomCellPosition() -> CGPoint{
-        let randomColumn = Int(arc4random_uniform(UInt32(columns-1)));
-        let randomRow = Int(arc4random_uniform(UInt32(rows-1)));
+        let randomColumn = Int(arc4random_uniform(UInt32(columns-1))) - (columns/2);
+        let randomRow = Int(arc4random_uniform(UInt32(rows-1))) - (rows/2);
         
         return getCellPositionFromGrid(x: randomColumn, y: randomRow)
     }

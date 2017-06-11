@@ -54,6 +54,7 @@ class GameScene: SKScene {
         objectSpawners?.append(FoodSpawner(inScene: self, managedBy: gridManager))
         
         initializeSnake()
+        drawLabel()
     }
     
     func initializeSnake(){
@@ -87,14 +88,7 @@ class GameScene: SKScene {
             lastFrame = currentTime
             
             
-            if let label = self.label {
-                if let labelValue = Int(label.text!){
-                    if labelValue < snake.getLength(){
-                        label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-                        label.text = String(snake.getLength())
-                    }
-                }
-            }
+            drawLabel()
             
             trySpawningObjects()
             
@@ -103,7 +97,16 @@ class GameScene: SKScene {
             }
         }
     }
-    
+    func drawLabel(){
+        if let label = self.label {
+            if let labelValue = Int(label.text!){
+                if labelValue != snake.getLength(){
+                    label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
+                    label.text = String(snake.getLength())
+                }
+            }
+        }
+    }
     func trySpawningObjects(){
         if let spawners = objectSpawners{
             for spawner in spawners {
