@@ -14,13 +14,16 @@ enum direction{
 }
 
 class Snake: SKNode{
-    var snakeDirection = direction.right
+    var snakeDirection = direction.up
     var steeringDirection : direction?
     var reachedBaseLength = false
+    let gridManager: GridManager
     
-    init (atPoint: CGPoint, withSize: CGSize){
+    
+    init (atPoint: CGPoint, managedBy: GridManager){
+        self.gridManager = managedBy
         super.init()
-        self.addChild(SnakeElement(atPoint: atPoint, withSize: withSize, after: nil))
+        self.addChild(SnakeElement(atPoint: atPoint, withSize: gridManager.cellSize, after: nil))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,6 +36,10 @@ class Snake: SKNode{
             steeringDirection = nil
         }
         
+        if let position = getPosition(){
+            let newPosition = gridManager.getNeighbouringCell(of: position, inDirection: snakeDirection)
+            self.addChild(SnakeElement(atPoint: newPosition, withSize: gridManager.cellSize, after: nil))
+        }
     }
     
     func getDirection() -> direction{

@@ -21,11 +21,11 @@ enum SteeringMode{
 class GameScene: SKScene {
     fileprivate var label : SKLabelNode?
     private var snake : Snake!
+    private var lastFrame : TimeInterval?
     
-    private var steeringMode = SteeringMode.absoulteTouchPosition
+    private var steeringMode = SteeringMode.relativeTouchPosition
     
     private var gridManager: GridManager!
-    
     
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
@@ -52,7 +52,8 @@ class GameScene: SKScene {
         gridManager = GridManager(columns: 11, sceneSize: self.size)
         
         
-        snake = Snake(atPoint: gridManager.getCellPositionFromGrid(x: 0, y: 0), withSize: gridManager.cellSize)
+        snake = Snake(atPoint: gridManager.getCellPositionFromGrid(x: 0, y: 0), managedBy: gridManager)
+        
         self.addChild(snake)
     }
     
@@ -86,6 +87,14 @@ class GameScene: SKScene {
          }
 
          */
+        if lastFrame == nil{
+            lastFrame = currentTime
+        }
+        
+        if lastFrame! + 1 > currentTime{
+            snake.move()
+            lastFrame = currentTime
+        }
     }
     
     func steeringInput(atPoint: CGPoint){
