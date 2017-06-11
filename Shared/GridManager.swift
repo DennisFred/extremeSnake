@@ -19,7 +19,6 @@ struct GridManager{
         let cellWidth = sceneSize.width > sceneSize.height ? sceneSize.height / CGFloat(self.columns) : sceneSize.width / CGFloat(self.columns)
         self.cellSize = CGSize(width: cellWidth, height: cellWidth)
         self.rows = Int(sceneSize.height / cellSize.height)
-
     }
     
     func getCellPositionFromGrid(x: Int, y: Int) -> CGPoint{
@@ -54,7 +53,7 @@ struct GridManager{
             newPosition.x = currentPosition.x
             break
         case .down:
-            newPosition.y = (((currentPosition.y - 1) + (rows / 2)) % rows) - (rows/2)
+            newPosition.y = (((currentPosition.y - 1) + (rows / 2) + rows) % rows) - (rows/2)
             newPosition.x = currentPosition.x
             break
         case .right:
@@ -63,7 +62,7 @@ struct GridManager{
             break
         case .left:
             newPosition.y = currentPosition.y
-            newPosition.x = (((currentPosition.x - 1) + (columns / 2)) % columns) - (columns/2)
+            newPosition.x = (((currentPosition.x - 1) + (columns / 2) + columns) % columns) - (columns/2)
             break
         }
         return getCellPositionFromGrid(x: newPosition.x, y: newPosition.y)

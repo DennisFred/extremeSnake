@@ -18,6 +18,7 @@ class Snake: SKNode{
     var steeringDirection : direction?
     var reachedBaseLength = false
     let gridManager: GridManager
+    var currentTargetLength = 5
     
     
     init (atPoint: CGPoint, managedBy: GridManager){
@@ -34,6 +35,11 @@ class Snake: SKNode{
         if let newDirection = steeringDirection{
             snakeDirection = newDirection
             steeringDirection = nil
+        }
+        
+        while getLength() > currentTargetLength{
+            let removedElement = children.dropFirst()
+            print(removedElement)
         }
         
         if let position = getPosition(){
@@ -54,15 +60,15 @@ class Snake: SKNode{
         }
     }
     
-    func getLength() -> Double{
-        return Double(self.children.count)
+    func getLength() -> Int{
+        return self.children.count
     }
     
     func getSpeed() -> Double{
         if getLength() < 5 {
             return 1
         } else {
-            return 1 * pow(0.95, getLength()-4)
+            return 1 * pow(0.95, Double(getLength()-4))
         }
     }
     
