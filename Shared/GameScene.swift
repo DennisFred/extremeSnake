@@ -23,10 +23,9 @@ class GameScene: SKScene {
     fileprivate var label : SKLabelNode?
     private var snake : Snake!
     private var lastFrame : TimeInterval?
-    
     private var steeringMode = SteeringMode.relativeTouchPosition
-    
     private var gridManager: GridManager!
+    private var objectSpawner: [ObjectSpawner]?
     
     class func newGameScene() -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
@@ -87,13 +86,6 @@ class GameScene: SKScene {
     #endif
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-        /*
-         if let label = self.label {
-         label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-         }
-
-         */
         if lastFrame == nil{
             lastFrame = currentTime
         }
@@ -103,7 +95,7 @@ class GameScene: SKScene {
         if lastFrame! + speed < currentTime{
             snake.move()
             lastFrame = currentTime
-        }
+        
         
         if let label = self.label {
             if let labelValue = Int(label.text!){
@@ -116,6 +108,7 @@ class GameScene: SKScene {
         
         if snake.getStatus() == .bidItself{
             gameOver()
+        }
         }
     }
     
