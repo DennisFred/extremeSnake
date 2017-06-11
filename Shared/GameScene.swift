@@ -111,7 +111,7 @@ class GameScene: SKScene {
             if let labelValue = Int(label.text!){
                 if labelValue != snake.getLength(){
                     label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-                    label.text = String(snake.getLength())
+                    label.text = String(snake.getPoints())
                 }
             }
         }

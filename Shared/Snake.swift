@@ -94,6 +94,9 @@ class Snake: SKNode{
     func getLength() -> Int{
         return self.children.count
     }
+    func getPoints() -> Int{
+        return currentTargetLength
+    }
     
     func getSpeed() -> Double{
         if getLength() < 5 {
