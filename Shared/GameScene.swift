@@ -24,20 +24,28 @@ class GameScene: SKScene {
     private var snake : Snake!
     private var lastFrame : TimeInterval?
     private var steeringMode = SteeringMode.relativeTouchPosition
-    private var gridManager: GridManager!
+    var gridManager: GridManager!
     private var objectSpawners: [ObjectSpawner]?
     
-    class func newGameScene() -> GameScene {
+    class func newGameScene(withSize: CGSize) -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
-        guard let scene = SKScene(fileNamed: "GameScene") as? GameScene else {
-            print("Failed to load GameScene.sks")
-            abort()
-        }
+        print(withSize)
+        
+        let scene = GameScene(size: withSize)
         
         // Set the scale mode to scale to fit the window
-        scene.scaleMode = .aspectFit
+        scene.scaleMode = .fill
         
         return scene
+    }
+    
+    override init(size: CGSize) {
+        super.init(size: size)
+        anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func setUpScene() {
@@ -48,7 +56,7 @@ class GameScene: SKScene {
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
         
-        gridManager = GridManager(columns: 11, inScene: self)
+        gridManager = GridManager(columns: 13, inScene: self)
         
         objectSpawners = []
         objectSpawners?.append(FoodSpawner(inScene: self, managedBy: gridManager))
@@ -203,9 +211,6 @@ class GameScene: SKScene {
             let mousePosition = event.location(in: self)
             pointBasedSteeringInput(atPoint: mousePosition)
         }
-        
-        
-        
         
         override func keyDown(with event: NSEvent) {
             keyBasedSteeringInput(keyCode: Int(event.keyCode))
