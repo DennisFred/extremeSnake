@@ -65,6 +65,15 @@
 		95EA3CBA1EED6A15002C5F49 /* FoodSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB81EED6A15002C5F49 /* FoodSpawner.swift */; };
 		95EA3CBB1EED6A15002C5F49 /* FoodSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB81EED6A15002C5F49 /* FoodSpawner.swift */; };
 		95EA3CBC1EED6A15002C5F49 /* FoodSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB81EED6A15002C5F49 /* FoodSpawner.swift */; };
+		95F9656F1EF039C900E2AA3C /* GridManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9656E1EF039C900E2AA3C /* GridManagerTests.swift */; };
+		95F965761EF039FA00E2AA3C /* GridManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95691D591EED477B00C304CE /* GridManager.swift */; };
+		95F965771EF039FD00E2AA3C /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF371EEC5800009817FF /* Cell.swift */; };
+		95F965781EF03A0000E2AA3C /* ObjectSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB31EED69D2002C5F49 /* ObjectSpawner.swift */; };
+		95F965791EF03A0300E2AA3C /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF161EEC493D009817FF /* Snake.swift */; };
+		95F9657A1EF03A0600E2AA3C /* SnakeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF1B1EEC49A2009817FF /* SnakeElement.swift */; };
+		95F9657B1EF03A0900E2AA3C /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF411EED01CE009817FF /* Food.swift */; };
+		95F9657C1EF03A0C00E2AA3C /* FoodSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB81EED6A15002C5F49 /* FoodSpawner.swift */; };
+		95F9657D1EF03A1100E2AA3C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FEA81EEC4526009817FF /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +90,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9578FECA1EEC4527009817FF;
 			remoteInfo = "watchOS Extension";
+		};
+		95F965711EF039C900E2AA3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9578FEA11EEC4526009817FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9578FEE61EEC4527009817FF;
+			remoteInfo = macOS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -144,6 +160,9 @@
 		9578FF411EED01CE009817FF /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		95EA3CB31EED69D2002C5F49 /* ObjectSpawner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectSpawner.swift; sourceTree = "<group>"; };
 		95EA3CB81EED6A15002C5F49 /* FoodSpawner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodSpawner.swift; sourceTree = "<group>"; };
+		95F9656C1EF039C900E2AA3C /* GridManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GridManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95F9656E1EF039C900E2AA3C /* GridManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridManagerTests.swift; sourceTree = "<group>"; };
+		95F965701EF039C900E2AA3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +188,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9578FEE41EEC4527009817FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F965691EF039C900E2AA3C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -204,6 +230,7 @@
 				9578FECF1EEC4527009817FF /* watchOS Extension */,
 				9578FEDA1EEC4527009817FF /* tvOS */,
 				9578FEE81EEC4527009817FF /* macOS */,
+				95F9656D1EF039C900E2AA3C /* GridManagerTests */,
 				9578FEAF1EEC4527009817FF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -230,6 +257,7 @@
 				9578FECB1EEC4527009817FF /* extremeSnake Extension.appex */,
 				9578FED91EEC4527009817FF /* extremeSnake.app */,
 				9578FEE71EEC4527009817FF /* extremeSnake.app */,
+				95F9656C1EF039C900E2AA3C /* GridManagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -296,6 +324,15 @@
 				95EA3CB81EED6A15002C5F49 /* FoodSpawner.swift */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		95F9656D1EF039C900E2AA3C /* GridManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				95F9656E1EF039C900E2AA3C /* GridManagerTests.swift */,
+				95F965701EF039C900E2AA3C /* Info.plist */,
+			);
+			path = GridManagerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +425,24 @@
 			productReference = 9578FEE71EEC4527009817FF /* extremeSnake.app */;
 			productType = "com.apple.product-type.application";
 		};
+		95F9656B1EF039C900E2AA3C /* GridManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95F965751EF039C900E2AA3C /* Build configuration list for PBXNativeTarget "GridManagerTests" */;
+			buildPhases = (
+				95F965681EF039C900E2AA3C /* Sources */,
+				95F965691EF039C900E2AA3C /* Frameworks */,
+				95F9656A1EF039C900E2AA3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95F965721EF039C900E2AA3C /* PBXTargetDependency */,
+			);
+			name = GridManagerTests;
+			productName = GridManagerTests;
+			productReference = 95F9656C1EF039C900E2AA3C /* GridManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -424,6 +479,12 @@
 						DevelopmentTeam = 8UV3T524J8;
 						ProvisioningStyle = Automatic;
 					};
+					95F9656B1EF039C900E2AA3C = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 8UV3T524J8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9578FEE61EEC4527009817FF;
+					};
 				};
 			};
 			buildConfigurationList = 9578FEA41EEC4526009817FF /* Build configuration list for PBXProject "extremeSnake" */;
@@ -444,6 +505,7 @@
 				9578FECA1EEC4527009817FF /* watchOS Extension */,
 				9578FED81EEC4527009817FF /* tvOS */,
 				9578FEE61EEC4527009817FF /* macOS */,
+				95F9656B1EF039C900E2AA3C /* GridManagerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -497,6 +559,13 @@
 				9578FEF71EEC4527009817FF /* GameScene.sks in Resources */,
 				9578FEFF1EEC4527009817FF /* Assets.xcassets in Resources */,
 				9578FEF31EEC4527009817FF /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F9656A1EF039C900E2AA3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +640,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		95F965681EF039C900E2AA3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F9657B1EF03A0900E2AA3C /* Food.swift in Sources */,
+				95F9656F1EF039C900E2AA3C /* GridManagerTests.swift in Sources */,
+				95F965781EF03A0000E2AA3C /* ObjectSpawner.swift in Sources */,
+				95F9657D1EF03A1100E2AA3C /* GameScene.swift in Sources */,
+				95F965791EF03A0300E2AA3C /* Snake.swift in Sources */,
+				95F9657C1EF03A0C00E2AA3C /* FoodSpawner.swift in Sources */,
+				95F965761EF039FA00E2AA3C /* GridManager.swift in Sources */,
+				95F965771EF039FD00E2AA3C /* Cell.swift in Sources */,
+				95F9657A1EF03A0600E2AA3C /* SnakeElement.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -583,6 +668,11 @@
 			isa = PBXTargetDependency;
 			target = 9578FECA1EEC4527009817FF /* watchOS Extension */;
 			targetProxy = 9578FECD1EEC4527009817FF /* PBXContainerItemProxy */;
+		};
+		95F965721EF039C900E2AA3C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9578FEE61EEC4527009817FF /* macOS */;
+			targetProxy = 95F965711EF039C900E2AA3C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -889,6 +979,42 @@
 			};
 			name = Release;
 		};
+		95F965731EF039C900E2AA3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8UV3T524J8;
+				INFOPLIST_FILE = GridManagerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = de.Dennis.GridManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/extremeSnake.app/Contents/MacOS/extremeSnake";
+			};
+			name = Debug;
+		};
+		95F965741EF039C900E2AA3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8UV3T524J8;
+				INFOPLIST_FILE = GridManagerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = de.Dennis.GridManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/extremeSnake.app/Contents/MacOS/extremeSnake";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -945,6 +1071,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		95F965751EF039C900E2AA3C /* Build configuration list for PBXNativeTarget "GridManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95F965731EF039C900E2AA3C /* Debug */,
+				95F965741EF039C900E2AA3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
