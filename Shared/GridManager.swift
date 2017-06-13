@@ -5,9 +5,25 @@
 //  Created by Dennis Schilling on 11.06.17.
 //  Copyright © 2017 DennisSchilling. All rights reserved.
 //
-
 import Foundation
 import SpriteKit
+
+extension CGSize{
+    func fillWith(numberOfSquares: Int) -> (rows:Int, columns:Int, squareSize: CGSize)?{
+        let area = self.width * self.height
+        if numberOfSquares > 0{
+            let squareArea = area / CGFloat(numberOfSquares)
+            
+            let squareSize = CGSize(width: squareArea.squareRoot(), height: squareArea.squareRoot())
+            let rows = Int(self.height / squareSize.height)
+            let columns = Int(self.width / squareSize.width)
+            
+            return (rows: rows, columns: columns, squareSize: squareSize)
+        } else {
+            return nil
+        }
+    }
+}
 
 struct GridManager{
     var columns: Int!
@@ -15,14 +31,21 @@ struct GridManager{
     var cellSize: CGSize!
     var scene: SKScene
     
-    init(columns: Int, inScene: SKScene) {
-        self.columns = columns
+    init(cells: Int, inScene: SKScene) {
         self.scene = inScene
-        
-        let cellWidth = (scene.size.width / CGFloat(self.columns)).rounded(.down)
-        self.cellSize = CGSize(width: cellWidth, height: cellWidth)
-        self.rows = Int(scene.size.height / cellSize.height)
+        initializeGrid(ofCells: cells)
     }
+    
+    mutating func initializeGrid(ofCells: Int){
+        if let calculatedGrid = scene.size.fillWith(numberOfSquares: ofCells){
+            cellSize = calculatedGrid.squareSize
+            rows = calculatedGrid.rows
+            columns = calculatedGrid.columns
+        } else {
+            fatalError("No valid cell number was provided!")
+        }
+    }
+    
     
     func getCellPositionFromGrid(x: Int, y: Int) -> CGPoint{
         let cellWidth = cellSize.width
@@ -49,18 +72,27 @@ struct GridManager{
     
     func getRandomEmptyCellPosition() -> CGPoint{
         let cellPosition = getRandomCellPosition()
-        let cellNodes = scene.nodes(at: cellPosition).filter{$0 is Cell}
         
-        if(cellNodes.count > 0){
+        if(cellIsOccupied(atPosition: cellPosition)){
             return getRandomEmptyCellPosition()
         } else {
             return cellPosition
         }
     }
     
+    func cellIsOccupied(atPosition position:CGPoint) -> Bool{
+        let cellNodes = scene.nodes(at: position).filter{$0 is Cell}
+        
+        if(cellNodes.count > 0){
+            return true
+        } else {
+            return false
+        }
+    }
+    
     func getNeighbouringCell(of: CGPoint, inDirection: direction) -> CGPoint{
         let currentPosition = getGridPositionFromCell(point: of)
-
+        
         let newPosition: (x:Int, y:Int)
         switch inDirection {
         case .up:
