@@ -12,16 +12,12 @@ import SpriteKit
 class Food: SKSpriteNode, Cell{
     internal let type : CellType
     
-    init(atPoint: CGPoint, withSize: CGSize, value:Int) {
+    init(atPoint: CGPoint, withSize: CGSize, value:Int = 1) {
         self.type = .food(value)
         super.init(texture: SKTexture(image: #imageLiteral(resourceName: "FoodSprite")), color:.clear, size: withSize)
         position = atPoint
     }
-    
-    convenience init(atPoint: CGPoint, withSize: CGSize){
-        self.init(atPoint: atPoint, withSize: withSize, value: 1)
-    }
-    
+        
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
