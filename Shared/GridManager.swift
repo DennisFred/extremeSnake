@@ -50,7 +50,11 @@ struct GridManager{
     func getCellPositionFromGrid(x: Int, y: Int) -> CGPoint{
         let cellWidth = Int(cellSize.width)
         let cellHeight = Int(cellSize.height)
-        return CGPoint(x:  x * cellWidth, y: y * cellHeight)
+        
+        let xPos = x * cellWidth
+        let yPos = y * cellHeight
+        
+        return CGPoint(x:  xPos, y: yPos)
     }
     
     func getGridPositionFromCell(point: CGPoint) -> (x: Int, y:Int){

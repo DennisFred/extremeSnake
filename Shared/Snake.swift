@@ -40,6 +40,7 @@ class Snake: SKNode{
         self.gridManager = managedBy
         super.init()
         self.addChild(SnakeElement(withSize: gridManager.cellSize, pointing: snakeDirection, atPosition: atPoint))
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

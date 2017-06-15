@@ -29,8 +29,7 @@ class GameScene: SKScene {
     
     class func newGameScene(withSize: CGSize) -> GameScene {
         // Load 'GameScene.sks' as an SKScene.
-        print(withSize)
-        
+
         let scene = GameScene(size: withSize)
         
         // Set the scale mode to scale to fit the window
@@ -41,7 +40,6 @@ class GameScene: SKScene {
     
     override init(size: CGSize) {
         super.init(size: size)
-        anchorPoint = CGPoint(x: 0.5, y: 0.5)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -68,12 +66,18 @@ class GameScene: SKScene {
         }
         
         gridManager = GridManager(cells: 255, inScene: self)
-        
+        anchorPoint = calculateAnchorPoint()
         objectSpawners = []
         objectSpawners?.append(FoodSpawner(inScene: self, managedBy: gridManager))
         
         initializeSnake()
         drawLabel()
+    }
+    
+    func calculateAnchorPoint() -> CGPoint{
+        var newAnchorPoint = CGPoint(x: 0.5, y: 0.5)
+        newAnchorPoint.x += gridManager.cellSize.width / (2 * size.width)
+        return newAnchorPoint
     }
     
     func createLabel() -> SKLabelNode{
