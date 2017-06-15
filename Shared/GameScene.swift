@@ -50,7 +50,11 @@ class GameScene: SKScene {
     
     func setUpScene() {
         // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//lengthLabel") as? SKLabelNode
+        if label == nil{
+            label = createLabel()
+            self.addChild(label!)
+        }
+        
         if let label = self.label {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
@@ -63,6 +67,11 @@ class GameScene: SKScene {
         
         initializeSnake()
         drawLabel()
+    }
+    
+    func createLabel() -> SKLabelNode{
+        let newLabel = SKLabelNode(text: "0")
+        return newLabel
     }
     
     func initializeSnake(){

@@ -37,6 +37,7 @@ class GridManagertest: XCTestCase {
     func testCGSizeFillWithSquares(){
         let testCGSize = CGSize(width: 16, height: 9)
         let squares = 144
+        
         let result = testCGSize.fillWith(numberOfSquares: squares)
         
         XCTAssertNotNil(result)

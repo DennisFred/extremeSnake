@@ -232,7 +232,7 @@
 				9578FECF1EEC4527009817FF /* watchOS Extension */,
 				9578FEDA1EEC4527009817FF /* tvOS */,
 				9578FEE81EEC4527009817FF /* macOS */,
-				95F9656D1EF039C900E2AA3C /* GridManagerTests */,
+				95F9656D1EF039C900E2AA3C /* Tests */,
 				9578FEAF1EEC4527009817FF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -327,12 +327,13 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		95F9656D1EF039C900E2AA3C /* GridManagerTests */ = {
+		95F9656D1EF039C900E2AA3C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				95F9656E1EF039C900E2AA3C /* GridManagerTests.swift */,
 				95F965701EF039C900E2AA3C /* Info.plist */,
 			);
+			name = Tests;
 			path = GridManagerTests;
 			sourceTree = "<group>";
 		};
