@@ -74,6 +74,11 @@
 		95F9657B1EF03A0900E2AA3C /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF411EED01CE009817FF /* Food.swift */; };
 		95F9657C1EF03A0C00E2AA3C /* FoodSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB81EED6A15002C5F49 /* FoodSpawner.swift */; };
 		95F9657D1EF03A1100E2AA3C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FEA81EEC4526009817FF /* GameScene.swift */; };
+		95F9657F1EF03BA500E2AA3C /* PowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9657E1EF03BA500E2AA3C /* PowerUp.swift */; };
+		95F965801EF03BA500E2AA3C /* PowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9657E1EF03BA500E2AA3C /* PowerUp.swift */; };
+		95F965811EF03BA500E2AA3C /* PowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9657E1EF03BA500E2AA3C /* PowerUp.swift */; };
+		95F965821EF03BA500E2AA3C /* PowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9657E1EF03BA500E2AA3C /* PowerUp.swift */; };
+		95F965831EF03BA500E2AA3C /* PowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9657E1EF03BA500E2AA3C /* PowerUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +168,7 @@
 		95F9656C1EF039C900E2AA3C /* GridManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GridManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F9656E1EF039C900E2AA3C /* GridManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridManagerTests.swift; sourceTree = "<group>"; };
 		95F965701EF039C900E2AA3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95F9657E1EF03BA500E2AA3C /* PowerUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,7 @@
 			children = (
 				9578FF371EEC5800009817FF /* Cell.swift */,
 				95EA3CB31EED69D2002C5F49 /* ObjectSpawner.swift */,
+				95F9657E1EF03BA500E2AA3C /* PowerUp.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -585,6 +592,7 @@
 				95EA3CB91EED6A15002C5F49 /* FoodSpawner.swift in Sources */,
 				95EA3CB41EED69D2002C5F49 /* ObjectSpawner.swift in Sources */,
 				9578FEB41EEC4527009817FF /* GameViewController.swift in Sources */,
+				95F9657F1EF03BA500E2AA3C /* PowerUp.swift in Sources */,
 				9578FEB21EEC4527009817FF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,6 +610,7 @@
 				95EA3CBA1EED6A15002C5F49 /* FoodSpawner.swift in Sources */,
 				95EA3CB51EED69D2002C5F49 /* ObjectSpawner.swift in Sources */,
 				9578FED31EEC4527009817FF /* ExtensionDelegate.swift in Sources */,
+				95F965801EF03BA500E2AA3C /* PowerUp.swift in Sources */,
 				9578FED11EEC4527009817FF /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,6 +628,7 @@
 				95EA3CBB1EED6A15002C5F49 /* FoodSpawner.swift in Sources */,
 				95EA3CB61EED69D2002C5F49 /* ObjectSpawner.swift in Sources */,
 				9578FEDE1EEC4527009817FF /* GameViewController.swift in Sources */,
+				95F965811EF03BA500E2AA3C /* PowerUp.swift in Sources */,
 				9578FEDC1EEC4527009817FF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,6 +646,7 @@
 				95EA3CBC1EED6A15002C5F49 /* FoodSpawner.swift in Sources */,
 				95EA3CB71EED69D2002C5F49 /* ObjectSpawner.swift in Sources */,
 				9578FEEC1EEC4527009817FF /* GameViewController.swift in Sources */,
+				95F965821EF03BA500E2AA3C /* PowerUp.swift in Sources */,
 				9578FEEA1EEC4527009817FF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,6 +660,7 @@
 				95F965781EF03A0000E2AA3C /* ObjectSpawner.swift in Sources */,
 				95F9657D1EF03A1100E2AA3C /* GameScene.swift in Sources */,
 				95F965791EF03A0300E2AA3C /* Snake.swift in Sources */,
+				95F965831EF03BA500E2AA3C /* PowerUp.swift in Sources */,
 				95F9657C1EF03A0C00E2AA3C /* FoodSpawner.swift in Sources */,
 				95F965761EF039FA00E2AA3C /* GridManager.swift in Sources */,
 				95F965771EF039FD00E2AA3C /* Cell.swift in Sources */,
