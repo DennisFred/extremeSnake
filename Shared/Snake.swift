@@ -40,6 +40,7 @@ class Snake: SKNode{
         self.gridManager = managedBy
         super.init()
         self.addChild(SnakeElement(withSize: gridManager.cellSize, pointing: snakeDirection, atPosition: atPoint))
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,42 +48,50 @@ class Snake: SKNode{
     }
     
     func move(){
-        if let newDirection = steeringDirection{
-            snakeDirection = newDirection
-            steeringDirection = nil
-        }
-        
-        while getLength() >= currentTargetLength{
-            self.children.first!.removeFromParent()
-        }
-        
+        turn()
+        removeEnd()
+        addHeadToTheFront()
+        updateTailTexture()
+    }
+    
+    func addHeadToTheFront(){
         if let position = getPosition(){
             let newPosition = gridManager.getNeighbouringCell(of: position, inDirection: snakeDirection)
             
-            let nodesAtNewPosition = self.parent?.nodes(at: newPosition)
-            
-            reactToPotentialObstacles(nodes: nodesAtNewPosition)
+            reactToPotentialObstacles(nodes: self.parent?.nodes(at: newPosition))
             
             let formerHead = self.children.last! as! SnakeElement
             
             self.addChild(SnakeElement(withSize: gridManager.cellSize, pointing: snakeDirection, atPosition: newPosition))
             
             let currentHead = self.children.last! as! SnakeElement
-
+            
             rotate(node: currentHead, toDirection: snakeDirection)
             
             formerHead.updateTexture(newTexture: determineTexture(originDirection: formerHead.direction, destinationDirection: snakeDirection))
         }
-        
+    }
+    
+    func updateTailTexture(){
         if let newTail = self.children.first as? SnakeElement{
             newTail.updateTexture(newTexture: SKTexture(image: #imageLiteral(resourceName: "tail")))
             if self.children.count > 1, let secondElement = self.children[1] as? SnakeElement{
                 rotate(node: newTail, toDirection: secondElement.direction)
             }
-            
         }
-        
-        
+    }
+    
+    func turn(){
+        if let newDirection = steeringDirection{
+            snakeDirection = newDirection
+            steeringDirection = nil
+        }
+    }
+    
+    func removeEnd(){
+        while getLength() >= currentTargetLength{
+            self.children.first!.removeFromParent()
+        }
     }
     
     func rotate(node:SKNode, toDirection:direction){
