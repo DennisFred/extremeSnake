@@ -14,7 +14,7 @@ extension CGSize{
         if numberOfSquares > 0{
             let squareArea = area / CGFloat(numberOfSquares)
             
-            let squareSize = CGSize(width: squareArea.squareRoot(), height: squareArea.squareRoot())
+            let squareSize = CGSize(width: Int(squareArea.squareRoot()), height: Int(squareArea.squareRoot()))
             let rows = Int(self.height / squareSize.height)
             let columns = Int(self.width / squareSize.width)
             
