@@ -13,6 +13,15 @@ import SpriteKit
 
 enum direction{
     case up, right, down, left
+    
+    mutating func invertDirection(){
+        switch self{
+        case .up: self = .down
+        case .right: self = .left
+        case .down: self = .up
+        case .left : self = .right
+        }
+    }
 }
 
 enum SnakeStatus{

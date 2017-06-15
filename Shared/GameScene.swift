@@ -20,7 +20,7 @@ enum SteeringMode{
 
 
 class GameScene: SKScene {
-    fileprivate var label : SKLabelNode?
+    fileprivate var pointLabel : SKLabelNode?
     private var snake : Snake!
     private var lastFrame : TimeInterval?
     private var steeringMode = SteeringMode.relativeTouchPosition
@@ -50,8 +50,19 @@ class GameScene: SKScene {
     
     func setUpScene() {
         // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//lengthLabel") as? SKLabelNode
-        if let label = self.label {
+        if pointLabel == nil{
+            pointLabel = createLabel()
+            pointLabel?.verticalAlignmentMode = .top
+            pointLabel?.horizontalAlignmentMode = .right
+            if let size = scene?.size{
+                pointLabel?.position = CGPoint(x: size.width, y: size.height)
+            }
+            pointLabel?.text = "0"
+
+            self.addChild(pointLabel!)
+        }
+        
+        if let label = self.pointLabel {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
@@ -63,6 +74,11 @@ class GameScene: SKScene {
         
         initializeSnake()
         drawLabel()
+    }
+    
+    func createLabel() -> SKLabelNode{
+        let newLabel = SKLabelNode(text: "")
+        return newLabel
     }
     
     func initializeSnake(){
@@ -106,7 +122,7 @@ class GameScene: SKScene {
         }
     }
     func drawLabel(){
-        if let label = self.label {
+        if let label = self.pointLabel {
             if let labelValue = Int(label.text!){
                 if labelValue != snake.getPoints(){
                     label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
