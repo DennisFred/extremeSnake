@@ -71,6 +71,9 @@ class GameScene: SKScene {
     
     func createLabel() -> SKLabelNode{
         let newLabel = SKLabelNode(text: "0")
+        if let size = scene?.size{
+            newLabel.position = CGPoint(x: size.width, y: size.height)
+        }
         return newLabel
     }
     

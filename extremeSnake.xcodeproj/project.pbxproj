@@ -64,7 +64,6 @@
 		95F9656F1EF039C900E2AA3C /* GridManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9656E1EF039C900E2AA3C /* GridManagerTests.swift */; };
 		95F965761EF039FA00E2AA3C /* GridManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95691D591EED477B00C304CE /* GridManager.swift */; };
 		95F965771EF039FD00E2AA3C /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF371EEC5800009817FF /* Cell.swift */; };
-		95F965781EF03A0000E2AA3C /* ObjectSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB31EED69D2002C5F49 /* ObjectSpawner.swift */; };
 		95F965791EF03A0300E2AA3C /* Snake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF161EEC493D009817FF /* Snake.swift */; };
 		95F9657A1EF03A0600E2AA3C /* SnakeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF1B1EEC49A2009817FF /* SnakeElement.swift */; };
 		95F9657B1EF03A0900E2AA3C /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578FF411EED01CE009817FF /* Food.swift */; };
@@ -75,6 +74,7 @@
 		95F965811EF03BA500E2AA3C /* PowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9657E1EF03BA500E2AA3C /* PowerUp.swift */; };
 		95F965821EF03BA500E2AA3C /* PowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9657E1EF03BA500E2AA3C /* PowerUp.swift */; };
 		95F965831EF03BA500E2AA3C /* PowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9657E1EF03BA500E2AA3C /* PowerUp.swift */; };
+		95F965841EF2988A00E2AA3C /* ObjectSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EA3CB31EED69D2002C5F49 /* ObjectSpawner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -648,12 +648,12 @@
 			files = (
 				95F9657B1EF03A0900E2AA3C /* Food.swift in Sources */,
 				95F9656F1EF039C900E2AA3C /* GridManagerTests.swift in Sources */,
-				95F965781EF03A0000E2AA3C /* ObjectSpawner.swift in Sources */,
 				95F9657D1EF03A1100E2AA3C /* GameScene.swift in Sources */,
 				95F965791EF03A0300E2AA3C /* Snake.swift in Sources */,
 				95F965831EF03BA500E2AA3C /* PowerUp.swift in Sources */,
 				95F9657C1EF03A0C00E2AA3C /* FoodSpawner.swift in Sources */,
 				95F965761EF039FA00E2AA3C /* GridManager.swift in Sources */,
+				95F965841EF2988A00E2AA3C /* ObjectSpawner.swift in Sources */,
 				95F965771EF039FD00E2AA3C /* Cell.swift in Sources */,
 				95F9657A1EF03A0600E2AA3C /* SnakeElement.swift in Sources */,
 			);
